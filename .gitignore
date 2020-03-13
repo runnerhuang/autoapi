@@ -133,12 +133,9 @@ dmypy.json
 .idea/workspace.xml
 Common/__pycache__/run_public.cpython-36.pyc
 Report
-HelpScript
-ApiExecutor/API.pyc
-ApiExecutor/__init__.pyc
+Common/API.pyc
+Common/__init__.pyc
 Common/__pycache__/run_public.cpython-36.pyc
-HelpScript/__init__.pyc
-HelpScript/dataReady.pyc
 PublicModule/RunPublic.pyc
 PublicModule/__init__.pyc
 PublicModule/tearDown.pyc
