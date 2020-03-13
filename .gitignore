@@ -127,3 +127,42 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# define by user
+.idea/workspace.xml
+Common/__pycache__/run_public.cpython-36.pyc
+Report
+HelpScript
+ApiExecutor/API.pyc
+ApiExecutor/__init__.pyc
+Common/__pycache__/run_public.cpython-36.pyc
+HelpScript/__init__.pyc
+HelpScript/dataReady.pyc
+PublicModule/RunPublic.pyc
+PublicModule/__init__.pyc
+PublicModule/tearDown.pyc
+run_public.cpython-36.pyc
+TestRunner/HTMLTestRunner.pyc
+TestRunner/__init__.pyc
+TestRunner/log_result_2_text.pyc
+TestRunner/testReport.pyc
+TestRunner/testRunner.pyc
+*.pyc
+venv
+.idea
+*.log
+log.txt
+python36venv
+python36venv1
+geckodriver.log
+venv
+Report
+HelpScript
+Common/*.pyc
+Config/*.pyc
+ProjectPublic/*.pyc
+TestRunner/*.pyc
+TestRunner/__pycache__
+TestRunner/testRunner.py
+TestRunner/testRunner
