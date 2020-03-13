@@ -1,0 +1,29 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/log_store_uv",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param":{
+			"device_id":"dadasda",
+			"vendor_id":22
+		}
+	},
+	"output": {
+		"data": {
+			"EQ": true
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}

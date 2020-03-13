@@ -1,0 +1,28 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/cart/add",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"product_id": "{{key.food_id}}",
+			"vendor_id": "{{key.vendor_id}}",
+			"product_num": 2,
+			"package": [{"id":"{{key.tag_id}}","sid":["{{key.sid1}}","{{key.sid2}}"]}]
+		}
+	},
+	"output": {
+		"code": {
+			"EQ": 5008
+		},
+		"status": {
+			"EQ": false
+		},
+		"message": {
+			"EQ": "每單限購1份，您還可購買1份"
+		}
+	}
+}

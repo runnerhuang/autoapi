@@ -1,0 +1,38 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/rpc/floor/getlist",
+                "headers": {},
+                "param": [
+                        {
+                                "name": "name",
+                                "in": "query",
+                                "description": "名称",
+                                "type": "string"
+                        },
+                        {
+                                "name": "type_id",
+                                "in": "query",
+                                "description": "业态id",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "type_level",
+                                "in": "query",
+                                "description": "业态level，type_id传值时为必需",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

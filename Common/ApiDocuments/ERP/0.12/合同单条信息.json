@@ -1,0 +1,29 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/contract/data",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "query",
+                                "description": "数据id",
+                                "required": "true",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

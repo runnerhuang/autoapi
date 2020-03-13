@@ -1,0 +1,17 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/aftersales",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id": "{{key.order_id}}",
+			"product_info":[{"amount":"1","product_id":"{{key.product_id}}"}],
+			"refund_type":8,
+			"refund_reason":"发起售后"
+		}
+	}
+}

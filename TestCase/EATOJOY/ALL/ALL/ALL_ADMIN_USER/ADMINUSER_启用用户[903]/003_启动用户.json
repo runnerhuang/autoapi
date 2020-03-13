@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/admin_user/update_status",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "id":"{{key.admin_user_id}}",
+				"status":1
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

@@ -1,0 +1,12 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/coupon/my?_page=1&_pageSize=10",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		}
+	},
+	"key":{"coupon_user_code":"data.list.0.coupon_user_code"}
+}

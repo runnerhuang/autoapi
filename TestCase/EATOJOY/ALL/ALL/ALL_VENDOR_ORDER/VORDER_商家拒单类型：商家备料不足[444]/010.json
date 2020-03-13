@@ -1,0 +1,31 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/order/refuse",
+		"headers": {
+			"Content-Type": "application/x-www-form-urlencoded",
+              "Cookie":"vendor_token={{pre.vendor_token}};vendor_id={{pre.vendor_id}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}",
+			"refused_reason":"拒单原因",
+            "refused_type":2,
+			"is-test":"yes"
+		}
+	},
+	"output": {
+		"data": {
+			"EQ": true
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "拒單成功！"
+		},
+		"code": {
+			"EQ": 0
+		}
+	}
+}

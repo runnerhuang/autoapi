@@ -1,0 +1,27 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/action_log?order_id={{key.order_id}}",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}

@@ -1,0 +1,41 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/create",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "vendor_id": "{{key.vendor_id}}",
+      "num": "3",
+      "type": "{{key.type_id}}",
+      "name": "仅套餐选项",
+      "description": "自动化测试简介",
+      "images": "{{pre.eatojoy_pic}}",
+      "price": 34.66,
+      "has_package": 2,
+      "stock": 0,
+      "limited_stock": 0,
+      "is_wine":0
+    },
+
+    "output": {
+      "data": {
+        "TYPE": "dict"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    }
+  },"key":{"food_id_3":"data.food_id"}
+}
+
+

@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/user/coupon/code/add",
+		    "headers":{
+				"Content-Type": "application/json",
+         	   "token":"{{pre.eatojoy_user_token}}"
+			},
+		    "param":{
+                "code":"{{key.coupon_user_code}}"
+            }
+	},
+	"output": {
+    "data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}
+	}
+}

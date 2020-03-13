@@ -1,0 +1,11 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/coupon/loginpush",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/statement/list",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+              "pay_status":1
+			}
+	},
+      "key":{"id":"data.list.0.id"}
+}

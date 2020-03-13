@@ -1,0 +1,28 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/order/accept",
+		"headers": {
+			"Content-Type": "application/json",
+              "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}"
+		}
+	},
+	"output": {
+		"data": {
+			"type": "list"
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "接單成功"
+		},
+		"code": {
+			"EQ": 0
+		}
+	},"sleep":10
+}

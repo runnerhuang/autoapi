@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/detail",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+                "coupon_id":"{{key.coupon_id_1}}"
+            }
+	},
+    "key":{"coupon_code_1":"data.coupon_code","coupon_name_1":"data.coupon_name"}
+}

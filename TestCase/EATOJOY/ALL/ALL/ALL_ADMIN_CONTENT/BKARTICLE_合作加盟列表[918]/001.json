@@ -1,0 +1,33 @@
+{
+  "input": {
+    "method": "GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/franchisee/list",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param":{
+      "page": 1,
+      "limit": 10,
+      "name": "傻瓜机",
+      "contact":"10086",
+      "time_start":"2018-01-02 10:08:08",
+      "time_end":"2019-01-02 10:08:08"
+    }
+  },
+  "output": {
+    "data": {
+      "TYPE": "dict"
+    },
+    "code": {
+      "EQ": 0
+    },
+    "status": {
+      "EQ": true
+    },
+    "message": {
+      "EQ": "success"
+    }
+  }
+}

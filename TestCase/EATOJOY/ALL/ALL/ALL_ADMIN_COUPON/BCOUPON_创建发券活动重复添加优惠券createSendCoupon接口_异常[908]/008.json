@@ -1,0 +1,19 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/createSendCoupon",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+                "title":"发券活动标题{{pre.eatojoy_phone+1}}" ,
+                "type":"regist",
+                "show_start_time":"2020-10-1",
+                "show_end_time":"2021-10-1",
+                "coupon_codes":["{{key.coupon_code_1}}","{{key.coupon_code_2}}"]
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":false},"message":{"EQ":"優惠碼已在其他活動中使用：{{key.coupon_code_1}}"}}
+}

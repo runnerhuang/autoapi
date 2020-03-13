@@ -1,0 +1,29 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/collection/list",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"lon":"114.38817",
+			"lat":"22.0490721"
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}

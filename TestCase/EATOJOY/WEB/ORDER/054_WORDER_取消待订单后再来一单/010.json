@@ -1,0 +1,15 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/cancel",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id": "{{key.order_id}}",
+			"order_status": 2
+		}
+	}
+}

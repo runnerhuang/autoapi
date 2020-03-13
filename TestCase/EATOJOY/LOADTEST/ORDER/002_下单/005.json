@@ -1,0 +1,11 @@
+{ 
+  "public":  
+  [
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "LotCartAdd" 
+    } ,
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "ConcurrencyPay" 
+    } 
+  ]
+}

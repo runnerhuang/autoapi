@@ -1,0 +1,8 @@
+{ 
+  "public":  
+  [
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "Android_QuickCheckout" 
+    } 
+  ]
+}

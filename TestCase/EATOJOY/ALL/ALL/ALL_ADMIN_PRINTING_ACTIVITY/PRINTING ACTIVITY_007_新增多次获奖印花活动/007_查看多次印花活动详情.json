@@ -1,0 +1,27 @@
+{
+  "input": {
+    "method": "GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/activity_printing/detail",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "id": "{{key.id}}"
+    }
+  },
+  "output": {
+    "code": {"EQ": 0},
+    "status": {"EQ":true},
+    "message": {"EQ": "success"},
+    "id":{"EQ":"{{key.id}}"},
+    "title":{"EQ":"自动化多次获奖活动印花"},
+    "type":{"EQ":2},
+    "get_printing_value":{"EQ":20.56},
+    "data.set_data.0.coupon_code":{"EQ":"{{key.coupon_code_1}}"},
+    "data.set_data.0.coupon_name":{"EQ":"{{key.coupon_name_1}}"},
+    "data.set_data.1.coupon_code":{"EQ":"{{key.coupon_code_2}}"},
+    "data.set_data.1.coupon_name":{"EQ":"{{key.coupon_name_2}}"}
+  }
+}

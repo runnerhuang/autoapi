@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/food/add_type",
+		    "headers":{"Content-Type": "application/json",
+              "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+			},
+            "param":{
+                "num": "123",
+            	"sale_time": "00:00~23:59",
+            	"name": "自动化测试商品类型"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}},
+	"key":{"type_id":"data.id"}
+}

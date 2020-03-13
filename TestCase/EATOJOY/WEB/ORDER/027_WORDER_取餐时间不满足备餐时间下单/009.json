@@ -1,0 +1,24 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/payment/pay",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}",
+			"source_id":"{{pre.eatojoy_source_id}}","test":"123"
+		}
+	},
+	"output": {
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": false
+		},
+		"message":{"EQ":"訂單信息錯誤"}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/open",
+		    "headers":{"Content-Type": "application/json",
+              "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+			},
+            "param":{
+				"st":1
+            }
+	}
+}

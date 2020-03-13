@@ -1,0 +1,50 @@
+{
+	"new":[
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_start_time",
+      "arg":10
+    },
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_end_time",
+      "arg":6000000
+    }]  ,
+
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vip_coupon_activity/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+               "title":"这是VIP券活动",
+				"image":"",
+				"rule":"这是活动规则，购买VIP券支付成功将下发对应的优惠券",
+				"goods":[{
+					"goods_name":"VIP券商品01",
+					"goods_image":"/eatojoy/5ed6b10805e1dc769dc6c66b9df8855c.png",
+					"goods_info":"优惠券：满100元打8折",
+					"goods_comment":"商品备注",
+					"vendor_id":"26059",
+					"sort":"1",
+					"price":1056,
+					"num_limit":2,
+					"start_time":"{{key.activity_start_time}}",
+					"end_time":"{{key.activity_end_time}}",
+					"is_display_countdown":"1",
+					"coupon_list":[{
+						"coupon_code":"{{key.coupon_code}}",
+						"num":2
+					}]
+				}]
+
+
+            }
+	},
+    "output":{"code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}},
+	"key":{"activity_id":"data"}
+}

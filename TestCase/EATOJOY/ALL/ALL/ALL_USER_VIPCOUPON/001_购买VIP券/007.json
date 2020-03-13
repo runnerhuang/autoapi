@@ -1,0 +1,18 @@
+{
+
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/user/payment/vip_coupon_pay",
+		    "headers":{"Content-Type": "application/json",
+               "token":"{{pre.eatojoy_user_token}}"
+			},
+		    "param":{
+				"order_id":"{{key.order_id}}",
+				"call_back":"https://eatojoy-app.hktester.com/vipPaySucess?fromType=eatojoyAppIos&order_id={{key.order_id}}&vipPaySucessGoHome=true&actNo={{key.activity_id}}&eatojoyVersion=0.9.8&goods_name=VIP%E5%88%B8%E5%95%86%E5%93%8101"
+
+            }
+	},
+    "output":{"code":{"EQ":0},"status":{"EQ":true}},
+	"key":{"transactionId":"data.transactionId"}
+}

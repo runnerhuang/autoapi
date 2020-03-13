@@ -1,0 +1,54 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/create",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "vendor_id": "{{pre.vendor_id}}",
+      "num": "商品编号1001",
+      "type": "{{key.type_id}}",
+      "name": "自动化套餐每日售卖{{key.type_id}}",
+      "description": "自动化测试简介",
+      "images": "{{pre.eatojoy_pic}}",
+      "limited_stock":1,
+      "stock":0,
+      "price": 123,
+      "has_package": 1,
+      "sale_time":0,
+      "packages": [{
+        "package_name": "12",
+        "package_type": "1",
+        "package_tags": [
+          {
+            "tag_name": "123",
+            "tag_price": 123
+          },
+          {
+            "tag_name": "123",
+            "tag_price": 123
+          }
+        ]
+      }]
+    }
+  },
+    "output": {
+      "data": {
+        "TYPE": "dict"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    },"key":{"food_id":"data.food_id"}
+}
+
+

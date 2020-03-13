@@ -1,0 +1,19 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/admin_user/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "user_name":"{{pre.eatojoy_phone}}user_name",
+                "email":"{{pre.eatojoy_phone}}@qq.com",
+                "name":"冻结自动化测试用户名",
+                "group_ids":"1,2",
+                "status":1
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}},
+    "key":{"admin_user_id":"data.id"}
+}

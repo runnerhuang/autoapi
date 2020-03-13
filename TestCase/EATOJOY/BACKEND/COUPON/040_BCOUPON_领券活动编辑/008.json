@@ -1,0 +1,21 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon_activity/update",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+				"id":{{key.coupon_activity_id}},
+                "title":"领券活动标题{{pre.eatojoy_phone+1}}",
+                "image_path":"{{pre.eatojoy_pic}}",
+                "rule":"活动规则",
+                "coupon_list":"{{key.coupon_code_1}},{{key.coupon_code_2}}"
+
+
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

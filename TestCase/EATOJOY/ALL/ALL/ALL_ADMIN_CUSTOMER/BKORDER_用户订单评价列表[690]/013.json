@@ -1,0 +1,17 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/evaluation",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}",
+			"merchants_id":"{{pre.vendor_id}}",
+			"evaluation_star":3,
+			"evaluation_content":"评价内容"
+		}
+	}
+}

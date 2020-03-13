@@ -1,0 +1,52 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/user/feedback/submit",
+                "headers": {
+                        "app-version": "",
+                        "app-system": "",
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "object",
+                                "in": "formData",
+                                "description": "反馈对象，1商场，2客户端，3店铺",
+                                "required": true,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "content",
+                                "in": "formData",
+                                "description": "意见或建议",
+                                "required": true,
+                                "type": "string"
+                        },
+                        {
+                                "name": "mobile",
+                                "in": "formData",
+                                "description": "手机号码,当未登陆时为必填项",
+                                "required": false,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "images",
+                                "in": "formData",
+                                "description": "图片路径(多个图片用英文,分隔开)",
+                                "required": false,
+                                "type": "string"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

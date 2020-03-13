@@ -1,0 +1,17 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/cart/list",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"vendor_id": "{{key.vendor_id}}",
+			"lon":"115.38817",
+			"lat":"23.0490721"
+
+		}
+	},"key":{"id_2":"data.product_list.0.id","order_grand_total_2":"data.price_total"}
+}

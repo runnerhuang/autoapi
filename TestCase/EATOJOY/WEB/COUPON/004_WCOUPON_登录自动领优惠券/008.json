@@ -1,0 +1,19 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/createSendCoupon",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+                "title":"发券活动标题{{pre.eatojoy_phone}}" ,
+                "type":"login",
+                "show_start_time":"{{pre.eatojoy_today}}",
+                "show_end_time":"{{pre.eatojoy_1000day}}",
+                "coupon_codes":["{{key.coupon_code_1}}","{{key.coupon_code_2}}"]
+            }
+	},
+	"sleep":20
+}

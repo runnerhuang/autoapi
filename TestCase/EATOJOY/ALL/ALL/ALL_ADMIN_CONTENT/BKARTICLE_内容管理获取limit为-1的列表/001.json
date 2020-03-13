@@ -1,0 +1,11 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/article/list?limit=-1",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":false},"message":{"EQ":"limit值或長度小於限制範圍"}}
+}

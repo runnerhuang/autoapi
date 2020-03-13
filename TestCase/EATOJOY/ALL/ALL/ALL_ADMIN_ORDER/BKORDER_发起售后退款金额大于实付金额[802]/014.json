@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/aftersales",
+		    "headers":{"Content-Type": "application/json",
+                  "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "order_id":"{{key.order_id}}",
+				"refund_type":3,
+                "refund_reason":"其他",
+				"refund_price":"1230.01"
+            }
+	},
+    "output":{"status":{"EQ":false}, "code":{"EQ":0},"message":{"EQ":"退款金額不能大於用戶付款金額，請修改後提交。"}}
+}

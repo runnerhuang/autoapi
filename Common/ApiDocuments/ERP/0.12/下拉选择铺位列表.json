@@ -1,0 +1,38 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/shop/select",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "name",
+                                "in": "query",
+                                "description": "名称/ID",
+                                "type": "string"
+                        },
+                        {
+                                "name": "status",
+                                "in": "query",
+                                "description": "1使用中，2停用",
+                                "type": "integer",
+                                "enum": [
+                                        1,
+                                        2
+                                ]
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

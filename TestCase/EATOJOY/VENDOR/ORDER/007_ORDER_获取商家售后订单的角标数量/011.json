@@ -1,0 +1,28 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/order/takefood",
+		"headers": {
+			"Content-Type": "application/json",
+            "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}"
+		}
+	},
+	"output": {
+		"data": {
+			"EQ": true
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "取餐成功"
+		}
+	}
+}

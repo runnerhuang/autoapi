@@ -1,0 +1,19 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/evaluatelist",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+			}
+	},
+    "output":{"data":{"TYPE":"dict"},
+		"code":{"EQ":0},
+		"status":{"EQ":true},
+		"message":{"EQ":"數據獲取成功 !"},
+		"data.list.0.evaluation_star":{"EQ":3},
+		"data.list.0.evaluation_content":{"EQ":"评价内容"}
+	}
+}

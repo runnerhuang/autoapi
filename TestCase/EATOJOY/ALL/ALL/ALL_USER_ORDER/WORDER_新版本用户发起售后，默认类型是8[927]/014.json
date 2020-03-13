@@ -1,0 +1,31 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "https://eatojoy-api.hktester.com/api/1.0/web/1.0.0",
+		"rest": "/user/order/aftersales",
+		"headers": {
+			"Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}",
+			"refund_type":8,
+			"refund_reason":"这是用户主动发起的售后",
+			"refund_picture":"/eatojoy/f61d421b867821f22fcf47b71f17b65b.jpeg|/eatojoy/33e5f8057109d62bcab5f2081fe291d8.jpeg",
+			"product_info":[
+				{"amount":"{{key.product_counts}}","product_id":"{{key.product_id}}"}
+			]
+		}
+	},
+	"output": {
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "我們會於3個工作天內處理問題及專人通知閣下！"
+		}
+	}
+}

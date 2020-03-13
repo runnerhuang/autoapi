@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/admin_group/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"name":"自动化测试用户组",
+                "permissions":{"user":{"user":["index"],"evaluate":["index"]},"vendor":{"ruzhu":["index","add","update","delete","base_check","bank_check","protocol_check","detail"],"info":["index","detail","food_management","block","reset_password"]},"transaction":{"order":["index","detail","add"],"after_sale_order":["index","detail","audit"]},"finance":{"payment":["index"],"settlement":["index","detail","payment"]},"content":{"feedback":["index"],"slider":["index"],"article":["index"],"franchisee":["index"],"push":["index"]},"system_admin":{"version":["index"]},"system_management":{"role":["index"]},"overview":{"sales_data":["index"]}}
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"添加成功 !"}},
+    "key":{"user_group_id":"data.id"}
+}

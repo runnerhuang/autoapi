@@ -1,0 +1,53 @@
+{
+  "new":[
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_start_time",
+      "arg":60
+    },
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_end_time",
+      "arg":6000000
+    }]  ,
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/activity_printing/create",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+      "param": {
+        "type": 2,
+        "title": "自动化多次获奖活动印花",
+        "cover_image_path": "/eatojoy/ae70e6b440916bafe3c2d1ba5410e439.png",
+        "image_path": "/eatojoy/7ef9df39ff8d56bacd5353cf8c7aac6f.png",
+        "rule": "<p>234234 这是玩法1：舒服撒打发斯蒂芬 2、是的发送到发 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+        "detail_rule": "这是印花活动的条款和细则，1.fasfasf 2.测试数据",
+        "printing_name": "圣诞活动",
+        "get_printing_value": 20.56,
+        "printing_num": 6,
+        "activity_start_time": "{{key.activity_start_time}}",
+        "activity_end_time": "{{key.activity_end_time}}",
+        "get_printing_rule": "1",
+        "memo": "活动备注，集满6张可获取优惠码",
+        "get_printing_rule": 1,
+        "set_prize":[
+          {
+          "min_pay_price":20,
+          "max_pay_price":30,
+          "coupon_code":"{{key.coupon_code}}",
+          "coupon_name":"{{coupon_name}}"
+        }
+        ]
+            }
+},
+
+        "output":{
+        "code":{"EQ":80002},
+        "status":{"EQ":false},
+        "message":{"EQ":"優惠碼{{key.coupon_code}}無效"}}
+}

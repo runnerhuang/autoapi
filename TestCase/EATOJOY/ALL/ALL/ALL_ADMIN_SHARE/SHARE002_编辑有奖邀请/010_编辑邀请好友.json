@@ -1,0 +1,62 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/share/update",
+		"headers": {
+			"Content-Type": "application/json",
+			"eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"type": 30,
+			"title": "这个是有奖邀请的标题：有奖邀请{{pre.eatojoy_phone}}",
+			"link": "https://misseatsomuch.page.link/xUzC",
+			"content": "这个是有奖邀请的介绍文案：推薦您e肚仔訂餐，多商家可選，營養美味。{{pre.eatojoy_phone}}",
+			"status": 1,
+			"activity_rule": "这个是有奖邀请的活动规则：无规矩不成方圆{{pre.eatojoy_phone}}",
+			"thumb": "/eatojoy/0ef1f29ddcb0d74a9bfdbaeb999691b8.jpg",
+			"id": 3805,
+			"award_coupon_list": {
+				"inviter_coupon_list": [
+					{
+						"coupon_code": "{{key.coupon_code_1}}",
+						"send_quantity": 1,
+						"coupon_name": "{{key.coupon_name_1}}"
+					},
+					{
+						"coupon_code": "{{key.coupon_code_2}}",
+						"send_quantity": 1,
+						"coupon_name": "{{key.coupon_name_2}}"
+					}
+				],
+				"invitee_coupon_list": [
+					{
+						"coupon_code": "{{key.coupon_code_1}}",
+						"send_quantity": 1,
+						"coupon_name": "{{key.coupon_name_1}}"
+					},
+					{
+						"coupon_code": "{{key.coupon_code_2}}",
+						"send_quantity": 1,
+						"coupon_name": "{{key.coupon_name_2}}"
+					}
+				]
+			}
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}
+

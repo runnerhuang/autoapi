@@ -1,0 +1,32 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/push/create",
+		"headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"receiver":1,
+            "title":"推送01文章",
+            "content":"这是一篇01的文章",
+            "url":"https://www.hk01.com/article/273559/",
+			"type":2,
+			"push_time":""
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "int"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	},"sleep":5
+}

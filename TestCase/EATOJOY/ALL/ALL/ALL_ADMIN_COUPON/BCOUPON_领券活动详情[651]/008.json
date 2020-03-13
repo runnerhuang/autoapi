@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon_activity/detail",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+				"id":{{key.coupon_activity_id}}
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"},"data.id":{"EQ":{{key.coupon_activity_id}}}}
+}

@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/audit",
+		    "headers":{"Content-Type": "application/json",
+                  "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+				"after_sales_id":"{{key.after_sales_id}}",
+                "is_pass":1,
+                "responsibility":2,
+                "comment":"备注"
+            }
+	},
+    "output":{"data": {"EQ":true}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"審核成功！"}}
+}

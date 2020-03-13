@@ -1,0 +1,47 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/flow/mytasklist",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "type",
+                                "in": "query",
+                                "description": "事项类型",
+                                "required": "true",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "title",
+                                "in": "query",
+                                "description": "名称/ID",
+                                "type": "string"
+                        },
+                        {
+                                "name": "flow_type",
+                                "in": "query",
+                                "description": "流程类型",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "priority",
+                                "in": "query",
+                                "description": "优先级",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

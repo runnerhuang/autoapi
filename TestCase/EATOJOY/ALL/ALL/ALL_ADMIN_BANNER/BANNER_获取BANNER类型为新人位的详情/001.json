@@ -1,0 +1,23 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/banner/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "data":[
+                  {
+                    "name":"{{pre.eatojoy_phone}}新人banner",
+                    "image_path":"/eatojoy/6445362969d3c4d31872ca3201bcadd1.jpeg",
+                    "jump_url":"www.baidu.com"
+                  }
+                ],
+                "valid_time_start":"2018-01-02 10:08:08",
+				"valid_time_end":"2018-01-03 10:08:08",
+				"type":2
+            }
+	},
+    "key":{"banner_id":"data.id"}
+}

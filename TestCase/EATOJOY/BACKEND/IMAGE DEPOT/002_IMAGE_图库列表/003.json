@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/image_depot/list",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"vendor_id":"{{key.vendor_id}}",
+				"page":1,
+				"limit":10,
+				"image_id":"{{key.image_id}}"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

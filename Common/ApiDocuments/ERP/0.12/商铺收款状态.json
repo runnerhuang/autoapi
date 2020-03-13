@@ -1,0 +1,26 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.erp_url}}",
+                "rest": "/fms/payment/paymentStatus",
+                "headers": {},
+                "param": [
+                        {
+                                "name": "payment_file",
+                                "in": "query",
+                                "description": "上传文件name",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

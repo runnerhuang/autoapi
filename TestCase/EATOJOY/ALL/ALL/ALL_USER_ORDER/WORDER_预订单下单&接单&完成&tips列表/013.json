@@ -1,0 +1,38 @@
+{
+    "new":  
+    { 
+      "class": "Common.util", 
+      "function": "OrderSnDB" ,
+      "arg":"{{key.order_id}}",
+      "key":"order_id_sn"
+    } ,
+    "sql":{"command":["UPDATE e_order_{{key.order_id_sn}} SET order_status  = 4 WHERE order_id = {{key.order_id}}",
+    "UPDATE e_order_detail_{{key.order_id_sn}} SET order_status  = 4 WHERE order_id = {{key.order_id}}",
+    "UPDATE e_order_search SET order_status  = 4 WHERE order_id = {{key.order_id}}"]},
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/order/takefood",
+		"headers": {
+			"Content-Type": "application/json",
+            "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}"
+		}
+	},
+	"output": {
+		"data": {
+			"EQ": true
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "取餐成功"
+		}
+	}
+}

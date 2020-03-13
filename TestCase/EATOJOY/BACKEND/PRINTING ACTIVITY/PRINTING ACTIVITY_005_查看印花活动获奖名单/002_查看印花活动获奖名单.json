@@ -1,0 +1,32 @@
+{
+  "input": {
+    "method": "GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/activity_winners/list",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+<<<<<<< HEAD
+      "activity_id": "{{key.printing_acticity_id}}"
+=======
+      "activity_id": "{{key.id}}"
+>>>>>>> 5f8ee725b7fb825b25d29004d4abc60776480173
+    }
+  },
+  "output": {
+    "data": {
+      "type": "dict"
+    },
+    "code": {
+      "EQ": 0
+    },
+    "status": {
+      "EQ":true
+    },
+    "message": {
+      "EQ": "success"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/shop/save",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "formData",
+                                "description": "数据id,不传时视为添加操作",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "code",
+                                "in": "formData",
+                                "description": "铺位编号",
+                                "required": "true",
+                                "type": "string"
+                        },
+                        {
+                                "name": "floor_id",
+                                "in": "formData",
+                                "description": "所属楼层id",
+                                "required": "true",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "area",
+                                "in": "formData",
+                                "description": "建筑面积（㎡）",
+                                "required": "true",
+                                "type": "number",
+                                "format": "double"
+                        },
+                        {
+                                "name": "sell_area",
+                                "in": "formData",
+                                "description": "租赁面积（㎡）",
+                                "required": "true",
+                                "type": "number",
+                                "format": "double"
+                        },
+                        {
+                                "name": "public_area",
+                                "in": "formData",
+                                "description": "外摆面积（㎡）",
+                                "required": "true",
+                                "type": "number",
+                                "format": "double"
+                        },
+                        {
+                                "name": "electrify",
+                                "in": "formData",
+                                "description": "1未通电，2通电",
+                                "type": "integer",
+                                "enum": [
+                                        1,
+                                        2
+                                ]
+                        },
+                        {
+                                "name": "water",
+                                "in": "formData",
+                                "description": "1未通水，2通水",
+                                "type": "integer",
+                                "enum": [
+                                        1,
+                                        2
+                                ]
+                        },
+                        {
+                                "name": "gas",
+                                "in": "formData",
+                                "description": "1未通煤气，2通煤气",
+                                "type": "integer",
+                                "enum": [
+                                        1,
+                                        2
+                                ]
+                        },
+                        {
+                                "name": "shop_phone",
+                                "in": "formData",
+                                "description": "店铺电话",
+                                "type": "string"
+                        },
+                        {
+                                "name": "intro",
+                                "in": "formData",
+                                "description": "简介",
+                                "type": "string"
+                        },
+                        {
+                                "name": "position[0]",
+                                "in": "formData",
+                                "description": "热点坐标：[x,y]中的x",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "position[1]",
+                                "in": "formData",
+                                "description": "热点坐标：[x,y]中的y",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "location",
+                                "in": "formData",
+                                "description": "铺位位置",
+                                "type": "string"
+                        },
+                        {
+                                "name": "brand_logo",
+                                "in": "formData",
+                                "description": "<b style='color:red'>图片上传接口</b>返回的filename值",
+                                "type": "string"
+                        },
+                        {
+                                "name": "which_floor",
+                                "in": "formData",
+                                "description": "楼层，如：L1",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

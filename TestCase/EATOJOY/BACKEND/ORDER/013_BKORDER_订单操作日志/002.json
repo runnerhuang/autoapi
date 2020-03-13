@@ -1,0 +1,6 @@
+{ 
+  "public":  
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "VendorLogin" 
+    } 
+}

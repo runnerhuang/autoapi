@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/afterdetail",
+		    "headers":{"Content-Type": "application/json",
+                  "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+				"after_sales_id":"{{key.after_sales_id}}",
+				"order_id":"{{key.order_id}}"
+            }
+		},"sleep":10,
+    "output":{"code":{"EQ":0},"status":{"EQ":true},"message":{"VIN":"數據獲取成功"},"refund_status":{"EQ":1},
+	"responsibility":{"EQ":1}}
+
+}

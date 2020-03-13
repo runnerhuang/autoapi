@@ -1,0 +1,25 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/upgrade",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "list"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": false
+		},
+		"message": {
+			"EQ": ""
+		}
+	}
+}

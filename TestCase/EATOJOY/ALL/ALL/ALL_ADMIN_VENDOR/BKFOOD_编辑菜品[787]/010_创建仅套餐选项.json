@@ -1,0 +1,42 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/create",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "vendor_id": "{{pre.vendor_id}}",
+      "num": "商品编号1005{{pre.eatojoy_phone}}",
+      "type": "{{key.type_id}}",
+      "name": "自动化仅套餐选项{{key.type_id}}",
+      "description": "自动化测试仅套餐选项的简介",
+      "images": "{{pre.eatojoy_pic}}",
+      "price": 0,
+      "stock":0,
+      "is_wine":0,
+      "limited_stock":0,
+      "sale_date":0,
+      "has_package":2
+    }
+    },
+
+    "output": {
+      "data": {
+        "TYPE": "dict"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    },"key":{"food_id_3":"data.food_id"}
+}
+
+

@@ -1,0 +1,14 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_android_url}}",
+			"rest": "/user/food/list",
+		    "headers":{"Content-Type": "application/json",
+               "token":"{{pre.eatojoy_user_token}}"
+			},
+            "param":{
+                "id": "{{pre.vendor_id}}"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

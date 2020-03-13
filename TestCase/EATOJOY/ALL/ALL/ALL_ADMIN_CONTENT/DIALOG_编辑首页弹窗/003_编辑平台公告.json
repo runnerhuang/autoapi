@@ -1,0 +1,22 @@
+{
+	"input": {
+      "method": "POST",
+      "url": "{{pre.eatojoy_url}}",
+      "rest": "/admin/dialog/update",
+      "headers": {
+        "Content-Type": "application/json",
+        "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+      },
+      "param": {
+        "valid_time_start": "2023-10-04 23:00",
+        "valid_time_end": "2023-10-04 23:30",
+        "type": 3,
+        "status":2,
+        "content": "编辑自动化发版弹窗内容：e肚仔正在发版，请稍后再使用，感谢您的支持！",
+         "name":"编辑自动化发版弹窗标题",
+        "id":"{{key.dialog_id_2}}"
+      }
+    },
+"output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}},
+  "key":{"dialog_id_2":"data.id"}
+}

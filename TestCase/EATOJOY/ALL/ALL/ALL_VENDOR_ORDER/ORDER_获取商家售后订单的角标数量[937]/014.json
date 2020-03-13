@@ -1,0 +1,21 @@
+{
+	"input":{
+			"method": "POST",
+			"url": "{{pre.eatojoy_url}}",
+			"rest": "/admin/order/audit",
+		    "headers":{
+				"Content-Type": "application/json",
+				"eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}",
+				"is-test":"yes"
+			},
+            "param":{
+              "after_sales_id":"{{key.after_sales_id}}",
+              "is_pass":1,
+              "responsibility":2,
+				"refund_price":"1230",
+              "comment":"这是一个备注"
+            }
+	},
+	"sleep":20
+}
+

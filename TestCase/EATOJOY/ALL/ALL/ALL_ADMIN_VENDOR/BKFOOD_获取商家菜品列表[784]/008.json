@@ -1,0 +1,22 @@
+{
+  "input": {
+    "method": "GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/list",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "vendor_id": "{{pre.vendor_id}}",
+      "food_id":"{{pre.food_id}}",
+      "type":1,
+      "name":"自动化测试菜名",
+      "food_no":"123",
+      "_page":"2",
+      "_page_size":"10"
+    }
+  },"output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}
+
+

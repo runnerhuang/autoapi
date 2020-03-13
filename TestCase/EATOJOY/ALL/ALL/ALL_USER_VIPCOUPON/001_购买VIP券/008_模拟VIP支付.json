@@ -1,0 +1,17 @@
+{
+
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/user/vip_coupon_activity/pay_callback",
+		    "headers":{"Content-Type": "application/json",
+               "token":"{{pre.eatojoy_user_token}}"
+			},
+		    "param":{
+				"order_id":"{{key.order_id}}",
+				"actual_pay_price":"{{key.order_amount}}"
+
+            }
+	},
+    "output":{"code":{"EQ":0},"status":{"EQ":true}}
+}

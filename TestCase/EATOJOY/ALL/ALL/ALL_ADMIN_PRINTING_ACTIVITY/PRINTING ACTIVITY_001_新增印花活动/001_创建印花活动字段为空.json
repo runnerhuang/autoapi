@@ -1,0 +1,49 @@
+{
+  "new":[
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_start_time",
+      "arg":60
+    },
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_end_time",
+      "arg":6000000
+    }]  ,
+	"input": {
+      "method": "POST",
+      "url": "{{pre.eatojoy_url}}",
+      "rest": "/admin/activity_printing/create",
+      "headers": {
+        "Content-Type": "application/json",
+        "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+      },
+      "param": {
+        "type": 1,
+        "title": "",
+        "designated_merchant": 0,
+        "image_path": "/eatojoy/7ef9df39ff8d56bacd5353cf8c7aac6f.png",
+        "rule": "<p>234234 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+        "printing_name": "圣诞活动",
+        "get_printing_value": 20,
+        "printing_num": 6,
+        "prize_name": "圣诞音乐会门票",
+        "prize_num": 10,
+        "activity_start_time": "{{key.activity_start_time}}",
+        "activity_end_time": "{{key.activity_end_time}}",
+        "get_printing_rule": "1",
+        "memo": "集满6个即可兑换奖品"
+      }
+    },
+
+        "output":{
+        "data":{"type":"dict"},
+        "code":{"EQ":0},
+        "status":{"EQ":false},
+        "message":{"EQ":"標題參數不能為空"}
+   }
+}
+
+

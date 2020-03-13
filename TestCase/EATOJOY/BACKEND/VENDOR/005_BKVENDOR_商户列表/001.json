@@ -1,0 +1,21 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/list",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"_page":"1",
+                "_page_size":"10",
+                "mobile":"",
+                "vendor_id":"",
+                "seller":"",
+                "st":"0",
+                "name":"",
+                "district":""
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

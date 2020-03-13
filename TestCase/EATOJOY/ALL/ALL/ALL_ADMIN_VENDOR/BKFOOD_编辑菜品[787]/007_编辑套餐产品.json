@@ -1,0 +1,69 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/edit",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "food_id":"{{key.food_id_1}}",
+      "vendor_id": "{{pre.vendor_id}}",
+      "num": "商品编号1002{{pre.eatojoy_phone}}",
+      "type": "{{key.type_id}}",
+      "name": "编辑自动化套餐每日{{key.type_id}}",
+      "description": "自动化测试简介",
+      "images": "/eatojoy/490a75774eafe6d8a70bf98d80010516.jpeg",
+      "limited_stock":1,
+      "stock":9999,
+      "price": 111,
+      "has_package": 1,
+      "sale_time":"1,2,3,5,7",
+      "packages": [{
+        "package_name": "12",
+        "package_type": "2",
+        "package_tags": [
+          {
+            "tag_name": "123",
+            "tag_price": 11
+          },
+          {
+            "tag_name": "123",
+            "tag_price": 0
+          }
+        ]
+      },
+      {
+        "package_name": "自动化选项组01",
+        "package_type": "1",
+        "package_tags": [
+          {
+            "tag_name": "自动化选项01",
+            "tag_price": 0
+          },
+          {
+            "tag_name": "自动化选项02",
+            "tag_price": 11
+          }
+        ]
+      }]
+    }
+  },
+    "output": {
+      "data": {
+        "TYPE": "dict"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    }
+}
+
+

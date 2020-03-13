@@ -1,0 +1,33 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/push/create",
+		"headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"receiver":2,
+            "title":"创建领取优惠券活动推送",
+            "content":"优惠券领取",
+			"type":1,
+			"url":"https://eatojoy-app.hktester.com/printing?id=72&enterType=push",
+			"push_time":""
+
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "int"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	},"sleep":5
+}

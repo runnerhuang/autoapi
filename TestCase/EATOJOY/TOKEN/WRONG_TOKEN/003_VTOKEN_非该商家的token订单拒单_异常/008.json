@@ -1,0 +1,23 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/payment/pay",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXUyJ9.eyJpYXQiOjE1MzI0MTkyODksImV4cCI6MTUzNTAxMTI4OSwiYWNjb3VudElkIjoxMDAwMzk3fQ.lneBLCexn7AdnbF9cUOq2li7o7O2CMaYjBKZBIRIvgFGlVwjuVbEnzYxj-TLnMSIspzTzoo9wXn8tBtkJddN-FaNMcDHQ1bhvn-NzCfJFWRi1svk8-HgHQmjevdhjIB2vBIiS7O6IDUvojMOvLEbZk2uIKjz2d_eOcuM1jFELaZ9COwnbSwk--MS9M0mlSLEXR3OxMWCQujQpEPxKROdH0J1S-UXNTMVpeRkEoxFEAId0Ho5RRg3slrmhF7tnmoTO2bvRXjmvoUyvT8LjnKfwc0t18QfVD6nJQ5AwSaA050cHdgjTLq5koL8ozeItpvoozYgFDnqhtbgXSIRuazlrQ"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}",
+			"source_id":"card_1CrLTDFOfYhptLUaXyEDY18P"
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"status": {
+			"EQ": true
+		}
+	},"sleep":2
+}

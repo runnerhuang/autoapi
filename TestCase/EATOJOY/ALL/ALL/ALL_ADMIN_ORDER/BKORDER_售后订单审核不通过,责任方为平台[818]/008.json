@@ -1,0 +1,13 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/afterlist",
+		    "headers":{"Content-Type": "application/json",
+                  "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+            }
+	},
+    "key":{"after_sales_id":"data.list.0.after_sales_id"}
+}

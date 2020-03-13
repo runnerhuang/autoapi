@@ -1,0 +1,19 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/paylist/income",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+              "page":1,
+              "limit":10,
+              "user_id":6,
+              "merchants_id":"{{pre.vendor_id}}",
+              "order_id":"{{key.order_id}}",
+              "pay_type":1
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

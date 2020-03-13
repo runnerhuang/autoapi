@@ -1,0 +1,36 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/brand/intention",
+                "headers": {
+                        "token": "",
+                        "_page": "",
+                        "_page_size": ""
+                },
+                "param": [
+                        {
+                                "name": "name",
+                                "in": "query",
+                                "description": "品牌名称/ID",
+                                "type": "string"
+                        },
+                        {
+                                "name": "type_id",
+                                "in": "query",
+                                "description": "业态id",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

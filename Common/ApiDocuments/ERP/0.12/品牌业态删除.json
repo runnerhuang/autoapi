@@ -1,0 +1,28 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/brand/typedel",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "formData",
+                                "description": "业态id",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

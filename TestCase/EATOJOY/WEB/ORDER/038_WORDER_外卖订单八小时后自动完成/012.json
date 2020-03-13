@@ -1,0 +1,19 @@
+{
+    "new":[{ 
+      "class": "Common.util", 
+      "function": "OrderSnDB" ,
+      "arg":"{{key.order_id}}",
+      "key":"order_id_sn"
+    } ,{ 
+      "class": "Common.util", 
+      "function": "OverTakeFoodTime" ,
+      "key":"OverTakeFoodTime"
+    } ] ,
+  "sql":{
+      "command":
+        ["UPDATE e_order_{{key.order_id_sn}} SET take_food_time  = {{key.OverTakeFoodTime}} WHERE order_id = {{key.order_id}}",
+        "UPDATE e_order_detail_{{key.order_id_sn}} SET take_food_time  = {{key.OverTakeFoodTime}} WHERE order_id = {{key.order_id}}",
+        "UPDATE e_order_index SET take_food_time  = {{key.OverTakeFoodTime}} WHERE order_id = {{key.order_id}}"]
+	},
+  "sleep":60
+}

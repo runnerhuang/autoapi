@@ -1,0 +1,35 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/activity_printing/create",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+      "param":{
+              "type":1,
+              "title":"自动化活动印花",
+              "image_path":"/eatojoy/7ef9df39ff8d56bacd5353cf8c7aac6f.png",
+              "rule":"<p>234234 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+              "detail_rule":"这是印花活动的条款和细则，1.fasfasf 2.测试数据",
+              "printing_name":"圣诞活动",
+              "get_printing_value":0,
+              "printing_num":0,
+              "prize_name":"圣诞音乐会门票",
+              "prize_num":0,
+              "activity_start_time":"2018-12-24 20:00:00",
+              "activity_end_time":"2019-12-30 20:00:00",
+              "get_printing_rule":"在活动期间集满6张印花即可获奖"
+            },
+
+        "output":{
+        "data":{"type":"dict"},
+        "code":{"EQ":0},
+        "status":{"EQ":false}
+
+}
+	},
+    "key":{"id":"data.data"},
+    "sleep":5
+}

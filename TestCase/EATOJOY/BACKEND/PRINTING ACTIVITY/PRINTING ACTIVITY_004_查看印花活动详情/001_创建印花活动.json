@@ -1,0 +1,59 @@
+{
+  "new":[
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_start_time",
+      "arg":60
+    },
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_end_time",
+      "arg":6000000
+    }]  ,
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/activity_printing/create",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+      "param": {
+<<<<<<< HEAD
+        "title": "自动化活动印花",
+        "image_path": "/eatojoy/7ef9df39ff8d56bacd5353cf8c7aac6f.png",
+        "rule": "<p>234234 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+=======
+        "type":1,
+        "title": "自动化活动印花",
+        "image_path": "/eatojoy/7ef9df39ff8d56bacd5353cf8c7aac6f.png",
+        "rule": "<p>234234 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+        "detail_rule":"这是活动条款与细则",
+>>>>>>> 5f8ee725b7fb825b25d29004d4abc60776480173
+        "printing_name": "圣诞活动",
+        "get_printing_value": 20,
+        "printing_num": 6,
+        "prize_name": "圣诞音乐会门票",
+        "prize_num": 10,
+        "activity_start_time": "{{key.activity_start_time}}",
+        "activity_end_time": "{{key.activity_end_time}}",
+        "get_printing_rule": "1",
+        "memo": "集满6张可兑换奖品"
+      }
+      },
+   "output":{
+        "data":{"type":"int"},
+        "code":{"EQ":0},
+        "status":{"EQ":true},
+        "message":{"EQ":"success"}
+   },
+<<<<<<< HEAD
+  "key":{"printing_acticity_id":"data"},
+=======
+  "key":{"id":"data"},
+>>>>>>> 5f8ee725b7fb825b25d29004d4abc60776480173
+  "sleep": 5
+
+}

@@ -1,0 +1,31 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_android_url}}",
+		"rest": "/user/order/aftersales",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}",
+			"refund_type":7,
+			"refund_reason":"商品漏单",
+			"refund_picture":"{{pre.eatojoy_pic}}"
+		}
+	},
+	"output": {
+		"data": {
+			"EQ": true
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "發起售後成功！"
+		}
+	}
+}

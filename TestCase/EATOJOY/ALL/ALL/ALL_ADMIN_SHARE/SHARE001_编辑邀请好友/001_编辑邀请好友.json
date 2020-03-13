@@ -1,0 +1,20 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/share/update",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"type":20,
+				"title":"这个是邀请好友的标题：立即成為e肚仔新用戶，即享$50迎新優惠！{{pre.eatojoy_phone}}",
+				"link":"https://misseatsomuch.page.link/xUzC",
+				"content":"这个是邀请好友的内容：將傳統外賣電子化，線上輕鬆落單，線下按時取餐。{{pre.eatojoy_phone}}",
+				"status":1,
+				"id":2655
+            }
+	},
+    "output": {
+		"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

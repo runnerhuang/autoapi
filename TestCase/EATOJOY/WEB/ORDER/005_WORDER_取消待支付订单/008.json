@@ -1,0 +1,29 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/cancel",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id": "{{key.order_id}}",
+			"order_status": 1
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "bool"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "取消訂單成功！"
+		}
+	}
+}

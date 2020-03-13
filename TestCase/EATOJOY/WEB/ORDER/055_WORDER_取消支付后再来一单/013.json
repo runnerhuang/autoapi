@@ -1,0 +1,28 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/user/cart/another_order",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}"
+		}
+	},
+	"output": {
+		"data.product_num": {
+			"EQ": "1"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": ""
+		}
+	}
+}

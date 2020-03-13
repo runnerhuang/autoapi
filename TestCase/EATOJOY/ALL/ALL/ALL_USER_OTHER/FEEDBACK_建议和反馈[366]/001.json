@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/user/feedback/create",
+		    "headers":{"Content-Type": "application/json",
+               "token":"{{pre.eatojoy_user_token}}"
+			},
+            "param":{
+                "contact":"自动化测试内容",
+                "content":"自动化测试联系方式"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}},
+    "key":{"article_id":"data.id"}
+}

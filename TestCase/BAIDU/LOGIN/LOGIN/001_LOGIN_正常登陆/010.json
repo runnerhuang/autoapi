@@ -1,0 +1,31 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.baidu_url}}",
+    "rest": "/post",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "param": {
+      "data": [
+        {
+          "name": "{{pre.baidu_num}}",
+          "runner": "test",
+          "jump_url": "www.baidu.com"
+        }
+      ],
+      "showenv": "1"
+    }
+  },
+  "output": {
+    "url": {
+      "EQ": "https://httpbin.org/post"
+    },
+    "json.data.0.jump_url":{
+      "EQ":"www.baidu.com"
+    },
+        "json.data.0.name":{
+      "EQ":1
+    }
+  }
+}

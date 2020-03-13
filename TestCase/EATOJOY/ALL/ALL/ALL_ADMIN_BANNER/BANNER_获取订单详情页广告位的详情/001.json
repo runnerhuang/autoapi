@@ -1,0 +1,24 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/banner/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "data":[
+                  {
+                    "name":"{{pre.eatojoy_phone}}订单详情广告位",
+                    "image_path":"/eatojoy/3e3747fe92633539220f07867f029ed6.jpg",
+                    "jump_url":"www.baidu.com"
+                  }
+                ],
+                "valid_time_start":"2018-01-02 10:08:08",
+				"valid_time_end":"2019-01-03 10:08:08",
+				"type":6
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}},
+    "key":{"banner_id":"data.id"}
+}

@@ -1,0 +1,72 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/part/save",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "formData",
+                                "description": "数据id,不传时视为添加操作",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "name",
+                                "in": "formData",
+                                "description": "名称",
+                                "required": "true",
+                                "type": "string"
+                        },
+                        {
+                                "name": "project_id",
+                                "in": "formData",
+                                "description": "属性项目id",
+                                "required": "true",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "area",
+                                "in": "formData",
+                                "description": "建筑面积（㎡）",
+                                "required": "true",
+                                "type": "number",
+                                "format": "double"
+                        },
+                        {
+                                "name": "use_area",
+                                "in": "formData",
+                                "description": "使用面积（㎡）",
+                                "required": "true",
+                                "type": "number",
+                                "format": "double"
+                        },
+                        {
+                                "name": "sell_area",
+                                "in": "formData",
+                                "description": "计租面积（㎡）",
+                                "required": "true",
+                                "type": "number",
+                                "format": "double"
+                        },
+                        {
+                                "name": "intro",
+                                "in": "formData",
+                                "description": "简介",
+                                "type": "string"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

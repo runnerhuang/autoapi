@@ -1,0 +1,41 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/user/franchisee/create",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param":{
+         "name":"自动化商家入驻",
+        "contact":"12334563"
+
+    },
+    "output": {
+      "name": {
+        "EQ": "自动化商家入驻"
+      },
+      "contact": {
+        "EQ": "12334563"
+      },
+      "user_id": {
+        "EQ": 0
+      },
+       "district": {
+        "EQ": -1
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,18 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/vendor/add_tag",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "name": "自动化子类目{{pre.eatojoy_3random}}",
+      "sort":"{{pre.eatojoy_3random}}",
+      "parent_id":"{{key.id_1}}"
+    }
+  },"output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":false},"message":{"EQ":"分類名已經使用"}}
+}
+
+

@@ -1,0 +1,27 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/message/read",
+		"headers":{"Content-Type": "application/json",
+			"Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+		},
+		"param": {
+			"id":"{{key.id}}"
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}

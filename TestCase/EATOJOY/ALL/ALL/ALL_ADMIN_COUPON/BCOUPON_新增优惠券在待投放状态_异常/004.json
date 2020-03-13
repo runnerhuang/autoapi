@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/code/addnew",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+                "coupon_code":"{{key.coupon_code}}",
+				"num":100
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":80003},"status":{"EQ":false},"message":{"EQ":"優惠碼無效"}}
+}

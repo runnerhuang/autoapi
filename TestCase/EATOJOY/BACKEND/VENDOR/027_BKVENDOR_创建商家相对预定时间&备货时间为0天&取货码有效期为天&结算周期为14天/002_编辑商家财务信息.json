@@ -1,0 +1,18 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/edit_vendor",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"bank_num":"243234232424",
+                "bank_owner":"任嘉伦",
+                "bank_type":"恒生银行",
+                "status":"0",
+                "vendor_id":"{{key.vendor_id}}"
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

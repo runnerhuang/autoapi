@@ -1,0 +1,20 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/push/receiver_list",
+		"headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+		}
+	},
+	"output": {
+		"name": {
+			"TYPE": "str"
+		},
+		"id": {
+			"TYPE": "int"
+		}
+	}
+}

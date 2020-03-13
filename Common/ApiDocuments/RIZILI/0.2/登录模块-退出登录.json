@@ -1,0 +1,23 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/user/login/logout",
+                "headers": {
+                        "app-version": "",
+                        "app-system": "",
+                        "token": ""
+                },
+                "param": []
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

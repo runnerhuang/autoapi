@@ -1,0 +1,22 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/food/create",
+		    "headers":{"Content-Type": "application/json",
+              "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+			},
+            "param":{
+                  "vendor_id":"{{key.vendor_id}}",
+                  "num": "123",
+                  "type": "{{key.type_id}}",
+                  "name": "自动化测试菜名",
+                  "description": "自动化测试简介",
+                  "images": "{{pre.eatojoy_pic}}",
+                  "price": 1,
+                  "has_package": 0
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}},
+	"key":{"food_id":"data.food_id"}
+}

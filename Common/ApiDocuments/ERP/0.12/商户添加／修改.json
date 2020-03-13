@@ -1,0 +1,113 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/company/save",
+                "headers": {},
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "formData",
+                                "description": "数据id,不传时视为添加操作",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "name",
+                                "in": "formData",
+                                "description": "商户名称",
+                                "required": "true",
+                                "type": "string"
+                        },
+                        {
+                                "name": "linkman",
+                                "in": "formData",
+                                "description": "签约主体联系人",
+                                "type": "string"
+                        },
+                        {
+                                "name": "post",
+                                "in": "formData",
+                                "description": "职位",
+                                "type": "string"
+                        },
+                        {
+                                "name": "contact_number",
+                                "in": "formData",
+                                "description": "联系电话",
+                                "type": "string"
+                        },
+                        {
+                                "name": "address",
+                                "in": "formData",
+                                "description": "公司地址",
+                                "type": "string"
+                        },
+                        {
+                                "name": "email",
+                                "in": "formData",
+                                "description": "邮箱地址",
+                                "type": "string"
+                        },
+                        {
+                                "name": "zip_code",
+                                "in": "formData",
+                                "description": "邮编号码",
+                                "type": "string"
+                        },
+                        {
+                                "name": "reg_num",
+                                "in": "formData",
+                                "description": "营业执照注册号",
+                                "type": "string"
+                        },
+                        {
+                                "name": "reg_residence",
+                                "in": "formData",
+                                "description": "营业执照住所",
+                                "type": "string"
+                        },
+                        {
+                                "name": "legal_r",
+                                "in": "formData",
+                                "description": "法定代表人/负责人/经营者",
+                                "type": "string"
+                        },
+                        {
+                                "name": "brand_list",
+                                "in": "formData",
+                                "description": "品牌列表",
+                                "type": "array",
+                                "items": {
+                                        "properties": {
+                                                "id": {
+                                                        "description": "数据id，不传视为添加",
+                                                        "type": "integer"
+                                                },
+                                                "brand_id": {
+                                                        "description": "品牌id",
+                                                        "type": "integer"
+                                                },
+                                                "mode": {
+                                                        "description": "经营方式：1代理，2托管，3直营",
+                                                        "type": "integer"
+                                                },
+                                                "operating_area": {
+                                                        "description": "经营区域",
+                                                        "type": "string"
+                                                }
+                                        }
+                                }
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

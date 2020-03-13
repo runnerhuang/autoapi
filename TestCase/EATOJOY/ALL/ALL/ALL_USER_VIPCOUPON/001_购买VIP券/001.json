@@ -1,0 +1,30 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/create",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+                "coupon_name":"自动化测试优惠券{{pre.eatojoy_phone}}" ,
+                "max_gen_quantity":10,
+                "coupon_type":2,
+                "coupon_type_value":8,
+                "limit_money":100,
+                "userlimit_quantity":10,
+                "validity_period_type":0,
+                "canuse_afterget_days":3,
+                "canuser_districts":"",
+                "canuser_shops":"73",
+                "canuse_user_type":"all",
+                "canuse_tips":"适用商家ID73和点心类商家",
+                "canuse_food_type":"g004"
+
+
+
+            }
+	},
+    "key":{"coupon_id":"data.coupon_id"}
+}

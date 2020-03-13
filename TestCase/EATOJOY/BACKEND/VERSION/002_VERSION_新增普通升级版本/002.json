@@ -1,0 +1,21 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/version/update",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"system":2,
+				"tid":2,
+				"version":"10087",
+				"content":"版本内容1",
+				"link":"www.qq.com",
+				"status":0,
+				"id":"{{key.id}}"
+
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

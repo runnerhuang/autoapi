@@ -1,0 +1,43 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/activity_printing/update",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "type":1,
+      "designated_merchant":0,
+      "id": "{{key.id}}",
+      "title": "修改后的值自动化活动印花",
+      "image_path": "/eatojoy/77be62bb909f40f49d82463a2439a19c.png",
+      "rule": "<p>修改后的数据234234 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+      "detail_rule":"活动条款与细则",
+      "printing_name": "修改后的圣诞活动",
+      "get_printing_value": 30,
+      "printing_num": 5,
+      "prize_name": "修改后的值圣诞音乐会门票",
+      "prize_num": 20,
+      "activity_start_time": "2020-01-02 12:00",
+      "activity_end_time": "2023-01-01 12:00",
+      "get_printing_rule": "1",
+      "memo": "修改集满5张可兑换奖品"
+    }
+  },
+  "output": {
+    "data": {
+      "type": "int"
+    },
+    "code": {
+      "EQ": 0
+    },
+    "status": {
+      "EQ": true
+    },
+    "message": {
+      "EQ": "success"
+    }
+  }
+}

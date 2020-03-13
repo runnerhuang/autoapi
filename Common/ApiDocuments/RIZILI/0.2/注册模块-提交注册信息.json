@@ -1,0 +1,52 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/user/register/register",
+                "headers": {
+                        "app-version": "",
+                        "app-system": "",
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "mobile",
+                                "in": "formData",
+                                "description": "手机号码",
+                                "required": true,
+                                "type": "string"
+                        },
+                        {
+                                "name": "regToken",
+                                "in": "formData",
+                                "description": "注册认证码",
+                                "required": true,
+                                "type": "string"
+                        },
+                        {
+                                "name": "hobby",
+                                "in": "formData",
+                                "description": "兴趣爱好，多个兴趣爱好以英文逗号分隔开",
+                                "required": true,
+                                "type": "string"
+                        },
+                        {
+                                "name": "unionid",
+                                "in": "formData",
+                                "description": "UnionID",
+                                "required": false,
+                                "type": "string"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

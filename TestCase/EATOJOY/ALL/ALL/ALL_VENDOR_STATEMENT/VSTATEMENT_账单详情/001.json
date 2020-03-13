@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/login",
+		    "headers":{"Content-Type": "application/json"
+			},
+            "param":{
+                "account":"12312310",
+                "password":"{{pre.eatojoy_cc_password}}",
+                "uuid":"dasda"
+            }
+	},
+    "key":{"vendor_token":"data.vendor_token","vendor_noDel_ID":"data.vendor_id"}
+}

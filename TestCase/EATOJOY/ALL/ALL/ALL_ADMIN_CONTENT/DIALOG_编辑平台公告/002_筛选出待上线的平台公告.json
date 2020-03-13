@@ -1,0 +1,18 @@
+{
+	"input": {
+      "method": "GET",
+      "url": "{{pre.eatojoy_url}}",
+      "rest": "/admin/dialog/list",
+      "headers": {
+        "Content-Type": "application/json",
+        "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+      },
+      "param": {
+        "type": 4,
+        "status":1,
+        "page":1
+    }
+    },
+      "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}},
+  "key":{"dialog_id_2":"data.list.0.id"}
+}

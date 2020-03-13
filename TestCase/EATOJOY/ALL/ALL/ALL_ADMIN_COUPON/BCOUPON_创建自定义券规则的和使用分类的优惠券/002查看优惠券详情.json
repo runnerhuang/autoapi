@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/detail",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+                "coupon_id":"{{key.coupon_id}}"
+            }
+	},
+    "output":{"code":{"EQ":0},"status":{"EQ":true},"coupon_code":{"EQ":"{{pre.eatojoy_phone}}"},"coupon_type_value":{"EQ":"20.00"},"limit_money":{"EQ":"100.00"}}
+
+}

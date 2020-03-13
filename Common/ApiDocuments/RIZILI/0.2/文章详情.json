@@ -1,0 +1,37 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/mall/article/detail",
+                "headers": {
+                        "app-version": "",
+                        "app-system": ""
+                },
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "query",
+                                "description": "文章id",
+                                "required": true,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "type",
+                                "in": "query",
+                                "description": "类型,1正式的文章详情 2预览的文章详情(文章草稿)",
+                                "required": true,
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

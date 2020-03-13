@@ -1,0 +1,14 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_android_url}}",
+		"rest": "/user/collection/add",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"vendor_id":"{{key.vendor_id}}"
+		}
+	}
+}

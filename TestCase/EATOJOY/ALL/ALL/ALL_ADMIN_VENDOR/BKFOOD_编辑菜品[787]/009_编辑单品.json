@@ -1,0 +1,43 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/edit",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "food_id":"{{key.food_id_2}}",
+      "vendor_id": "{{pre.vendor_id}}",
+      "num": "商品编号1004{{pre.eatojoy_phone}}",
+      "type": "{{key.type_id}}",
+      "name": "编辑自动化每日售卖测试单品{{key.type_id}}",
+      "description": "编辑自动化测试单品的简介",
+      "images": "/eatojoy/1b9c4b7553d94f038b3178b676b993d6.jpg",
+      "price": 100,
+      "stock":0,
+      "is_wine":1,
+      "limited_stock":0,
+      "sale_date":"1,2,3,5,7",
+      "has_package":0
+    }
+    },
+
+    "output": {
+      "data": {
+        "TYPE": "dict"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    }
+}
+
+

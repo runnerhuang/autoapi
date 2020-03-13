@@ -1,0 +1,21 @@
+{
+  "input":{
+    "method":"GET",
+    "url":"{{pre.eatojoy_url}}",
+    "rest":"/user/activity_printing/detail",
+    "headers":{
+      "content-type":"application/json"
+    },
+    "param":{
+    "id":"{{key.printing_acticity_id}}"
+    }
+  },
+  "output":{
+      "data": {"type":"dict"},
+      "status":{"EQ":true},
+      "code":{"EQ":0},
+      "message":{"EQ":"success"}
+    }
+
+  }
+

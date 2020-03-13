@@ -1,0 +1,30 @@
+{
+	"new":  
+    { 
+      "class": "Common.util", 
+      "function": "now_time" ,
+      "key":"time"
+    } ,
+	"input": {
+		"method": "POST",
+		"url":"https://eatojoy-app.hktester.com",
+		"rest": "/api/payment/notification/wezero",
+		"headers": {
+            "is-test":"yes"
+		},
+		"param": {
+			"tranId":"{{key.transactionId}}",
+			"issueAt":"{{key.time}}",
+			"merchantTranId":"{{key.order_id}}",
+			"amount":"{{key.order_grand_total}}",
+			"success":"success",
+			"from":"hk01"
+
+		}
+	},
+	"output": {
+		"state": {
+			"EQ": true
+		}
+	}
+}

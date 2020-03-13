@@ -1,0 +1,34 @@
+{
+  "input": {
+    "method": "GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/user/vendor/get_config",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    }},
+    "output": {
+      "data.per_spend.0.id": {
+        "EQ": "40"
+      }, "data.per_spend.0.name": {
+        "EQ": "$"
+      },
+      "data.per_spend.1.id": {
+        "EQ": "60"
+      }, "data.per_spend.1.name": {
+        "EQ": "$$"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    }
+  }
+
+
+

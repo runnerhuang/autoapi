@@ -1,0 +1,10 @@
+chardet == 3.0.4
+simplejson == 3.16.0
+jinja2 == 2.10
+redis == 2.10.6
+pymysql == 0.9.2
+dateutils == 0.6.6
+requests == 2.19.1
+selenium == 3.13.0
+jsonpath == 0.75
+TestLink-API-Python-client == 0.8.0

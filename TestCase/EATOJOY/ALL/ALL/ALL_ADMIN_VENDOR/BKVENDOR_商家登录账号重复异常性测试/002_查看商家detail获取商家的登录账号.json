@@ -1,0 +1,21 @@
+{
+   "new":  
+    { 
+      "class": "Common.util", 
+      "function": "random_int" ,
+      "key":"phone"
+    } ,
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/detail",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+			"id":"{{key.vendor_id_1}}"
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}},
+  "key":{"login_account_1":"data.login_account"}
+}

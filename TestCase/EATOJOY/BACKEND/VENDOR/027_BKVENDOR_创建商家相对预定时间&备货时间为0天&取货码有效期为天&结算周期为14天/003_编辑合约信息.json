@@ -1,0 +1,23 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/edit_vendor",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"rate":"8",
+				"settlement_cycle":"1",
+				"remark":"暂无备注",
+				"protocol_file":"/_docment/7e81f13c5bc01c7ba4dca9df73427b4a.docx",
+				"protocol_name":" 合约问题.docx",
+  				"end_time":"2030-01-01",
+				"start_time":"2018-01-01",
+				"status":"1",
+                "vendor_id":"{{key.vendor_id}}"
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}},
+    "key":{"vendor_id":"data.vendor_id"}
+}

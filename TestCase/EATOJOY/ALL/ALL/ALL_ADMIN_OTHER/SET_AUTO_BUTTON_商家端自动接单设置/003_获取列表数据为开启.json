@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/get_auto_button",
+		    "headers":{
+				"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+            }
+	},
+	"output":{"data.display_button":{"EQ":"1"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+
+}

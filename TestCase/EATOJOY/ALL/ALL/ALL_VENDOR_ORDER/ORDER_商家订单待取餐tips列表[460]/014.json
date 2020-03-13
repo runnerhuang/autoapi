@@ -1,0 +1,28 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/order/tipslist?order_type=2",
+		"headers": {
+			"Content-Type": "application/json",
+			"Cookie":"vendor_token={{pre.vendor_token}};vendor_id={{pre.vendor_id}}"
+		},
+		"param": {
+			"order_status":"4"
+		}
+	},
+	"output": {
+		"data.list.0.order_id": {
+			"EQ": "{{key.order_id}}"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "數據獲取成功 !"
+		}
+	}
+}

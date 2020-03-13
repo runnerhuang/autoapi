@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/image_depot/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"vendor_id":"{{key.vendor_id}}",
+				"image_id":123,
+				"file_size":3,
+				"image_path":"{{pre.eatojoy_pic}}"
+            }
+	},
+    "key":{"image_id":"data.image_id"}
+}

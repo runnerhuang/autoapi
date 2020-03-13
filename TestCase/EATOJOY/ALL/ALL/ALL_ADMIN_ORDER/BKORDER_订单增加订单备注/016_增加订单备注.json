@@ -1,0 +1,26 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/order_remark/add",
+		"headers": {
+			"Content-Type": "application/json",
+			"eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"order_id": "{{key.order_id}}",
+			"remark": "自动化订单备注"
+		}
+	},
+	"output": {
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}

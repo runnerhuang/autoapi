@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/food/order",
+		    "headers":{"Content-Type": "application/json",
+              "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+			},
+            "param":{
+                "id":"{{key.food_id}}",
+				"sort":1
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

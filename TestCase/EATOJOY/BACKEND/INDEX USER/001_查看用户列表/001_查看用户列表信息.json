@@ -1,0 +1,28 @@
+{
+  "input": {
+    "method": "GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/user/index",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+    },
+    "param":{
+      "limit":"10"
+    }
+  },
+  "output": {
+    "data": {
+      "type": "dict"
+    },
+    "code": {
+      "EQ": 0
+    },
+    "status": {
+      "EQ":true
+    },
+    "message": {
+      "EQ": ""
+    }
+  }
+}

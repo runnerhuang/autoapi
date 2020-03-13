@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/login",
+		    "headers":{"Content-Type": "application/json"
+			},
+            "param":{
+                "account":{{pre.eatojoy_phone}},
+				"password":"25d55ad283aa400af464c76d713c07ad",
+                "uuid":"asdasd"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}},
+    "key":{"vendor_token":"data.vendor_token"}
+}

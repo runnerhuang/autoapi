@@ -1,0 +1,28 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/user/cart/another_order",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"order_id":"{{key.order_id}}"
+		}
+	},
+	"output": {
+		"data": {
+			"type": "list"
+		},
+		"code": {
+			"EQ": 5000
+		},
+		"status": {
+			"EQ": false
+		},
+		"message": {
+			"EQ": "店鋪休息中"
+		}
+	}
+}

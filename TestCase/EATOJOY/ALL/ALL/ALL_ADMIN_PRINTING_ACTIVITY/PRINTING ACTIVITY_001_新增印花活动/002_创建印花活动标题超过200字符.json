@@ -1,0 +1,51 @@
+{
+  "new":[
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_start_time",
+      "arg":60
+    },
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_end_time",
+      "arg":6000000
+    }]  ,
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/activity_printing/create",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+      "param":{
+              "title":"自动化活动印花",
+              "image_path":"/eatojoy/7ef9df39ff8d56bacd5353cf8c7aac6f.png",
+              "rule":"<p>234234 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+              "type":1,
+              "designated_merchant":0,
+              "title":"测试底色是大方的说法所发生的十多个发生的股份撒的发生大法师法萨芬撒地方撒发顺丰测试底色是大方的说法所发生的十多个发生的股份撒的发生大法师法萨芬撒地方撒发顺丰测试底色是大方的说法所发生的十多个发生的股份撒的发生大法师法萨芬撒地方撒发顺丰测试底色是大方的说法所发生的十多个发生的股份撒的发生大法师法萨芬撒地方撒发顺丰测试底色是大方的说法所发生的十多个发生的股份撒的发生大法师法萨芬撒地方撒发顺丰测试底色是大方的说法所发生的十多个发生的股份撒的发生大法师法萨芬撒地方撒发顺丰阿发达GV大厦嘎达刮大风GV地方表格上水电费违法认为公司法律",
+              "image_path":"/eatojoy/7ef9df39ff8d56bacd5353cf8c7aac6f.png",
+              "rule":"<p>234234 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+              "detail_rule":"这是印花活动的条款和细则，1.fasfasf 2.测试数据",
+              "printing_name":"圣诞活动",
+              "get_printing_value":20,
+              "printing_num":6,
+              "prize_name":"圣诞音乐会门票",
+              "prize_num":10,
+              "activity_start_time":"{{key.activity_start_time}}",
+              "activity_end_time":"{{key.activity_end_time}}",
+              "get_printing_rule":"1",
+              "memo":"集满6张可兑换奖品"
+            }
+        },
+       "output":{
+        "data":{"type":"dict"},
+        "code":{"EQ":0},
+        "status":{"EQ":false},
+        "message":{"EQ":"標題值或長度超過限制"}
+   }
+	}
+

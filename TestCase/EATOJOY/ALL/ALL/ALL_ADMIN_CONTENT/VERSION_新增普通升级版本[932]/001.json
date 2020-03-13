@@ -1,0 +1,19 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/version/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"system":1,
+				"tid":1,
+				"version":"10086",
+				"content":"版本内容",
+				"link":"www.baidu.com",
+				"status":1
+
+			}
+	}, "key":{"id":"data.id"}
+}

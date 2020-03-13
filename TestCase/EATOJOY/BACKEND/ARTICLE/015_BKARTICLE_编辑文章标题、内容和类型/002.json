@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/article/update",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "id":"{{key.article_id}}",
+                "title":"编辑自动化测试添加登录协议文章",
+                "type":3,
+                "content":"11111111"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"},"data.title":{"EQ":"编辑自动化测试添加登录协议文章"}}
+}

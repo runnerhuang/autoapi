@@ -1,0 +1,40 @@
+{
+    "new":
+      {
+      "class":"Common.util",
+      "function":"now",
+      "key":"take_food_time"
+      }
+    ,
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/checkout",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"product_id": "{{key.food_id}}",
+			"merchants_id":"{{key.vendor_id}}",
+			"order_product_counts":"{{key.product_num}}",
+            "order_grand_total": "{{key.order_grand_total}}",
+            "take_food_time":"{{key.take_food_time}}"
+
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"code": {
+			"EQ": 2006
+		},
+		"status": {
+			"EQ": false
+		},
+		"message": {
+			"EQ": "訂單金額不小於4元"
+		}
+	}
+}

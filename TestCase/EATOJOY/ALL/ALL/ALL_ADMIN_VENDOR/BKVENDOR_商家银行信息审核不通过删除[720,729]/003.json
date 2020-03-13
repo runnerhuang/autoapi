@@ -1,0 +1,14 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/bank_check",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"id":"{{key.vendor_delete_id}}",
+                "result":0,
+                "remark":"自动化信息审核备注"
+			}
+	}}

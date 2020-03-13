@@ -1,0 +1,28 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/brand/intentiondel",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "formData",
+                                "description": "品牌id",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

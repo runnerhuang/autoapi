@@ -1,0 +1,46 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/edit_vendor",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+                "vendor_id":"{{key.vendor_id}}",
+				"name":"{{pre.eatojoy_vendor_name}}123",
+                "description":"编辑自动化测试商家简介",
+                "logo":"/eatojoy/45114dcf7115e0afb590979ae5228c4e.jpeg",
+                "tags":"z002,y002,g002",
+                "spend":"60",
+                "prepare_time":"15",
+                "business_code":"12345678911",
+                "district":"1",
+                "address":"编辑餐厅详细地址",
+                "contact":"编辑自动化",
+                "lon":"115.38817",
+                "lat":"23.0490721",
+                "business_time":"11:00~13:00,14:00~21:11",
+                "email":"zxs1234567@qq.com",
+                "mobile":"{{pre.eatojoy_phone}}",
+                "representative":"编辑hhhh",
+                "borrow_device":0,
+                "device_info":"1233",
+                "has_cash_pledge":0,
+                "cash_pledge":"1233",
+                "bank_num":"123456783",
+                "bank_owner":"hhhh",
+                "bank_type":"hhhhh",
+                "protocol_file":"/_docment/c02364cbdfa5a99d164b3c54575e7a7b.docx",
+                "protocol_name":"前端 修改 4.0.docx",
+                "start_time":"2018-05-18",
+                "end_time":"2018-06-08",
+                "rate":"20",
+                "settlement_cycle":"1","vendor_type": 1,
+                "remark":"123123132112312"
+
+
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":false},"message":{"EQ":"審核通過後不能修改結算週期"}}
+}

@@ -1,0 +1,47 @@
+{
+    "new":[
+      {
+      "class":"Common.util",
+      "function":"MIN_HM",
+      "key":"Eatojoy_offer_start_time",
+      "arg":-60
+      },
+      {
+      "class":"Common.util",
+      "function":"MIN_HM",
+      "key":"Eatojoy_offer_end_time",
+      "arg":60
+      }
+    ],
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/offer_activity/create",
+		"headers": {
+			"Content-Type": "application/json",
+			"eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"title": "{{key.food_id}}商品优惠活动",
+			"image_path":"{{pre.eatojoy_pic}}",
+            "rule":"活动规则",
+            "offer_start_time":"{{key.Eatojoy_offer_start_time}}",
+            "offer_end_time":"{{key.Eatojoy_offer_end_time}}",
+			"food_list":[{"vendor_id":"{{key.vendor_id}}","food_id":"{{key.food_id}}","offer_type":1,"offer_value":2.1,"limited_number":0}]
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "int"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}

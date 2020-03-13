@@ -1,0 +1,34 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/helper/code/login",
+                "headers": {},
+                "param": [
+                        {
+                                "name": "mobile",
+                                "in": "formData",
+                                "description": "手机号码",
+                                "required": true,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "code",
+                                "in": "formData",
+                                "description": "验证码,若不填写默认123456",
+                                "required": false,
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

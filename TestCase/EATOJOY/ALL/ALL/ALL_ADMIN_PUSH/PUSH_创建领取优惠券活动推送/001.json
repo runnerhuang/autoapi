@@ -1,0 +1,33 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/push/create",
+		"headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"receiver":1,
+            "title":"创建领取优惠券活动推送",
+            "content":"点击推送，进入优惠券领取界面",
+			"type":2,
+			"url":"https://eatojoy-app.hktester.com/coupon/activity?actNo=530&enterType=push",
+			"push_time":""
+
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "int"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	},"sleep":5
+}

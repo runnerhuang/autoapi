@@ -1,0 +1,37 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/user/index/uploadHead",
+                "headers": {
+                        "app-version": "",
+                        "app-system": ""
+                },
+                "param": [
+                        {
+                                "name": "image",
+                                "in": "formData",
+                                "description": "",
+                                "required": true,
+                                "type": "file"
+                        },
+                        {
+                                "name": "token",
+                                "in": "query",
+                                "description": "登录凭证",
+                                "required": true,
+                                "type": "string"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

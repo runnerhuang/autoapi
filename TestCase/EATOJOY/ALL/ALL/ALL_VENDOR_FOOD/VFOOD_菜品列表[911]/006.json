@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/food/list",
+		    "headers":{"Content-Type": "application/json",
+              "Cookie":"vendor_token={{pre.vendor_token}};vendor_id={{pre.vendor_id}}"
+			},
+            "param":{
+                "type":"{{key.type_id}}",
+				"_page":1,
+                "_page_size":10
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

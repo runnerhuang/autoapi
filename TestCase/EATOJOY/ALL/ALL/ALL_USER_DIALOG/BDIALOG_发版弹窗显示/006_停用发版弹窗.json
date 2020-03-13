@@ -1,0 +1,28 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/dialog/switch",
+		"headers": {
+			"Content-Type": "application/json",
+			"eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"id": "{{key.dialog_id_2}}"
+		}
+	},
+	"output": {
+		"data": {
+			"EQ": "1"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}

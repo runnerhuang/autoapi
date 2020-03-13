@@ -1,0 +1,52 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/flow/tasksave",
+                "headers": {
+                        "token": "",
+                        "_page": "",
+                        "_page_size": ""
+                },
+                "param": [
+                        {
+                                "name": "title",
+                                "in": "formData",
+                                "description": "名称",
+                                "required": "true",
+                                "type": "string"
+                        },
+                        {
+                                "name": "flow_template_id",
+                                "in": "formData",
+                                "description": "流程模板id",
+                                "required": "true",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "contract_id",
+                                "in": "formData",
+                                "description": "合同id",
+                                "required": "true",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "priority",
+                                "in": "formData",
+                                "description": "优先级",
+                                "required": "true",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

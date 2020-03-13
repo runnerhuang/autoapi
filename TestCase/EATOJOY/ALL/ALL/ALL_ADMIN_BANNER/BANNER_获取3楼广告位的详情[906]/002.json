@@ -1,0 +1,29 @@
+{
+	"input":{
+			"method":"GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/banner/detail",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "id":"{{key.banner_id}}"
+            }
+	},
+    "output": {
+
+      "id":{
+        "EQ": "{{key.banner_id}}"
+      }
+    ,
+    "code": {
+      "EQ": 0
+    },
+    "status": {
+      "EQ": true
+    },
+    "message": {
+      "EQ": "success"
+    }
+  }
+}

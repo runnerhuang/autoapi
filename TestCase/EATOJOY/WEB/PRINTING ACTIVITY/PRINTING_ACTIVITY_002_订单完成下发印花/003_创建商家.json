@@ -1,0 +1,11 @@
+{ 
+  "public":  
+  [
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "CreateVendor" 
+    } ,
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "VendorLogin" 
+    } 
+  ]
+}

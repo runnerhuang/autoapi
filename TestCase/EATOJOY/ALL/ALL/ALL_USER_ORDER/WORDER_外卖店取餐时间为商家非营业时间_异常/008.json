@@ -1,0 +1,37 @@
+{
+	"new":  
+    { 
+      "class": "Common.util", 
+      "function": "today" ,
+      "key":"today"
+    } ,
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/checkout",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"merchants_id": "{{key.vendor_id}}",
+			"order_product_counts":"{{key.product_num}}",
+			"order_grand_total":"{{key.order_grand_total}}",
+            "take_food_time":"{{key.today}} 23:59:00"
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "str"
+		},
+		"code": {
+			"EQ": 2000
+		},
+		"status": {
+			"EQ": false
+		},
+		"message": {
+			"EQ": "購物車中的產品不在售賣時間段，請重新選購商品！"
+		}
+	}
+}

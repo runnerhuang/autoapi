@@ -1,0 +1,14 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/banner/delete",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "id":"{{key.banner_id}}"
+            }
+	},
+    "output":{"data":{"EQ":"刪除成功 !"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

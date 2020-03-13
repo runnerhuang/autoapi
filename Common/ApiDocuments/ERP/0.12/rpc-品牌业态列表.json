@@ -1,0 +1,26 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/rpc/brand/type",
+                "headers": {},
+                "param": [
+                        {
+                                "name": "name",
+                                "in": "query",
+                                "description": "名称",
+                                "type": "string"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

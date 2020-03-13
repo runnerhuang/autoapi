@@ -1,0 +1,23 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/banner/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "data":[
+                  {
+                    "name":"{{pre.eatojoy_phone}}订单详情广告位",
+                    "image_path":"/eatojoy/143f2180ff07c8c904d424337111a58c.jpg"
+                  }
+                ],
+                "valid_time_start":"2018-01-02 10:08:08",
+				"valid_time_end":"2021-09-03 10:08:08",
+				"type":7
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}},
+    "key":{"banner_id":"data.id"}
+}

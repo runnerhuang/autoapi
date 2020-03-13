@@ -1,0 +1,42 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/project/getlist",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "sort_list",
+                                "in": "body",
+                                "description": "排序数据，如：{“5”:1,”6”:2}，5、6代表的是数据id,1、2是需要重写的排序值，排序会根据type类型更新对应的项目、楼宇、楼层数据",
+                                "schema": {
+                                        "properties": {
+                                                "5": {
+                                                        "description": "数据id",
+                                                        "type": "integer",
+                                                        "example": 1
+                                                },
+                                                "6": {
+                                                        "description": "数据id",
+                                                        "type": "integer",
+                                                        "example": 2
+                                                }
+                                        }
+                                },
+                                "type": "object"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

@@ -1,0 +1,26 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.erp_url}}",
+                "rest": "/fms/payment/paymentDetail",
+                "headers": {},
+                "param": [
+                        {
+                                "name": "payment_ids[]",
+                                "in": "query",
+                                "description": "收款id",
+                                "type": "array"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

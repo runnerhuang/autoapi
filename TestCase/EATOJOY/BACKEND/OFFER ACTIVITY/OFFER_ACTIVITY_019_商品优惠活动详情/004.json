@@ -1,0 +1,28 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/offer_activity/detail",
+		"headers": {
+			"Content-Type": "application/json",
+			"eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+		"id":"{{key.offer_activity_id}}"
+		}
+	},
+	"output": {
+		"data.id": {
+			"EQ": "{{key.offer_activity_id}}"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	}
+}

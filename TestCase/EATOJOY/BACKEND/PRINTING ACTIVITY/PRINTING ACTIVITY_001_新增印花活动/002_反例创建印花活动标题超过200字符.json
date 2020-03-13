@@ -1,0 +1,48 @@
+{
+  "new":[
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_start_time",
+      "arg":60
+    },
+    { 
+      "class": "Common.util", 
+      "function": "activity_printing_time" ,
+      "key":"activity_end_time",
+      "arg":6000000
+    }]  ,
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/activity_printing/create",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+      "param":{
+              "title":"测试超过200字符我热情而污染发生方式公司顺丰大厦股份是大法官恩爱事发地点是公司发的呀自动化活动印花未发发斯蒂芬三个，委托书的提高地方生非打死的发送到位热情投入讽德诵功发送是否打算的发生大嘎达噶武器二发网上发的撒大哥发送到发斯蒂芬威尔士发送到发顺丰玩儿法士大夫撒发送到发送到发斯蒂芬沃尔夫的三个法师gas的gas光度法公司规定，权威的打算的撒发生的发生地方温热撒大声地法师打发士大夫撒打发斯蒂芬去二分撒旦法师打发舒服撒地",
+              "image_path":"/eatojoy/7ef9df39ff8d56bacd5353cf8c7aac6f.png",
+              "rule":"<p>234234 https://www.hk01.com/article/270625/</p><p>dssdf</p><p>士大夫士大夫</p>",
+              "printing_name":"圣诞活动",
+              "get_printing_value":20,
+              "printing_num":6,
+              "prize_name":"圣诞音乐会门票",
+              "prize_num":10,
+              "activity_start_time":"{{key.activity_start_time}}",
+              "activity_end_time":"{{key.activity_end_time}}",
+              "get_printing_rule":"1",
+              "memo":"集满6张可兑换奖品"
+            }
+
+
+      },
+   "output":{
+        "data":{"type":"int"},
+        "code":{"EQ":0},
+        "status":{"EQ":false},
+        "message":{"EQ":"標題值或長度超過限制"}
+
+	}
+
+}

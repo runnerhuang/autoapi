@@ -1,0 +1,14 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/banner/delete",
+		"headers": {
+			"Content-Type": "application/json",
+			"eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"id": "{{key.whatsApp_id_1}}"
+		}
+	}
+}

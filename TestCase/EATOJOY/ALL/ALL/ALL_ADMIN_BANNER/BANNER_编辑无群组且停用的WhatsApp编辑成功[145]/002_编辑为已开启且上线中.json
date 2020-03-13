@@ -1,0 +1,20 @@
+{
+	"input":{
+			"method":"POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/banner/update",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		"param":{
+              "name":"编辑自动化无群组上线改为的WhatsApp",
+              "jump_url":"https://chat.whatsapp.com/JPpOuHhlEA3GSk6quxy2rr",
+              "valid_time_start":"2018-01-02 00:00",
+              "valid_time_end":"2021-01-03 23:59",
+              "type":8,
+              "status":1,
+				"id":"{{key.whatsApp_id}}"
+            }
+	},
+    "output":{"id":{"EQ":"{{key.whatsApp_id}}"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

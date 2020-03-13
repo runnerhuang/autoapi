@@ -1,0 +1,16 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/order/search",
+		"headers": {
+			"Content-Type": "application/json",
+              "Cookie":"vendor_token={{pre.vendor_token}};vendor_id={{pre.vendor_id}}"
+		},
+		"param": {
+			"value":"{{key.order_id}}"
+		}
+	},
+	"key":{"product_id":"data.list.0.items.0.product_id","product_counts":"data.list.0.items.0.product_counts"},
+	"sleep":10
+}

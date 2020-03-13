@@ -1,0 +1,19 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/add_type",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "vendor_id": "{{key.vendor_id}}",
+      "num": "{{key.vendor_id}}",
+      "name": "自动化测试菜名"
+    }
+  },"output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+  ,"key":{"type_id":"data.type_id"}
+}
+
+

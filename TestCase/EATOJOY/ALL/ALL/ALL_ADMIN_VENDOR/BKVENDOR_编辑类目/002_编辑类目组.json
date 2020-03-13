@@ -1,0 +1,17 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/vendor/update_tag",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "id":"{{key.id_1}}",
+      "name": "编辑类目1{{pre.eatojoy_3random}}",
+      "sort":"{{pre.eatojoy_3random}}",
+      "parent_id":0
+    }
+  },"output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

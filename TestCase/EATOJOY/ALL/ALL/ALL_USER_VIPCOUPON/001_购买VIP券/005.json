@@ -1,0 +1,16 @@
+{
+
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/user/vip_coupon_activity/detail",
+		    "headers":{"Content-Type": "application/json",
+               "token":"{{pre.eatojoy_user_token}}"
+			},
+		    "param":{
+				"id":"{{key.activity_id}}"
+            }
+	},
+    "output":{"code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}},
+	"key":{"goods_id":"data.goods.0.goods_id"}
+}

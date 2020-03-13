@@ -1,0 +1,33 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/message/list",
+		"headers":{"Content-Type": "application/json",
+			"Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+		},
+		"param": {
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		},
+        "data.list.0.title":{
+            "EQ": "推送标题"
+        }
+		,
+        "data.list.0.status":{
+            "EQ": 2
+        }
+	},"key":{"id":"data.list.0.id"}
+}

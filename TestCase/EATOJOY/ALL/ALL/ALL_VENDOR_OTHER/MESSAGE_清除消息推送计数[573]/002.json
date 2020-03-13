@@ -1,0 +1,16 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/push/create",
+		"headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"receiver":2,
+            "title":"推送标题",
+            "content":"推送内容",
+            "url":"www.baidu.com","type":2
+		}
+	},"sleep":5
+}

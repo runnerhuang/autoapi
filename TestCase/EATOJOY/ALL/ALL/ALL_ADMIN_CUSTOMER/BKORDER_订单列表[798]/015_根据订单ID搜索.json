@@ -1,0 +1,22 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/list",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"order_id":"201901281505474141543",
+				"page":1
+			}
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"數據獲取成功 !"},
+	"data.list.0.order_id":{"EQ":"201901281505474141543"},
+	"cellphone_number":{"EQ":"8618688925951"},
+	"merchants_id":{"EQ":"29292"},
+	"merchants_type":{"EQ":1},
+	"user_id":{"EQ":4},
+	"device":{"EQ":"01H5"}
+
+}}

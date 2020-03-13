@@ -1,0 +1,14 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/user/food/types",
+		    "headers":{"Content-Type": "application/json",
+               "token":"{{pre.eatojoy_user_token}}"
+			},
+            "param":{
+                "id": "{{pre.vendor_id}}"
+            }
+	},
+    "output":{"data.list.0.name":{"VIN":"自动化"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

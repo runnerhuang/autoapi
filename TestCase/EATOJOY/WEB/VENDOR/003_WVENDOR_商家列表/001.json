@@ -1,0 +1,20 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/user/vendor/list",
+		    "headers":{"Content-Type": "application/json",
+               "token":"{{pre.eatojoy_user_token}}"
+			},
+            "param":{
+                "lon":"114.38817",
+				"lat":"22.0490721",
+				"_page":1,
+                "_page_size":10,
+                "type":"1",
+                "prepare":"10",
+                "spend":"1"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

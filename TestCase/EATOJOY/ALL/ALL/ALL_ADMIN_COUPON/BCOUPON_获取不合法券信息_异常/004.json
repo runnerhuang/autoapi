@@ -1,0 +1,14 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/getValidationCoupon",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+               "coupon_code":"{{key.coupon_code}}"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":80002},"status":{"EQ":false},"message":{"EQ":"優惠碼{{key.coupon_code}}無效"}}
+}

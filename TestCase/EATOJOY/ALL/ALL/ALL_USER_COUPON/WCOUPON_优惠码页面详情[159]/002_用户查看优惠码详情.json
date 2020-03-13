@@ -1,0 +1,17 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/coupon_activity/detail",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param":{
+			"id":"{{key.coupon_activity_id_1}}"
+		}
+	},
+	"output": {
+    "data.id":{"EQ":"{{key.coupon_activity_id_1}}"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}
+	}
+}

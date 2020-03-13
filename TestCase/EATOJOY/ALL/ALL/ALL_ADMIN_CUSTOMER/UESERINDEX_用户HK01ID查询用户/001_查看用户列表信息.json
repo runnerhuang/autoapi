@@ -1,0 +1,40 @@
+{
+  "input": {
+    "method": "GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/user/index",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+    },
+    "param":{
+      "open_user_id":"1000120",
+      "page":1,
+      "limit":10
+    }
+  },
+  "output": {
+    "data": {
+      "type": "dict"
+    },
+    "code": {
+      "EQ": 0
+    },
+    "status": {
+      "EQ":true
+    },
+    "message": {
+      "EQ": ""
+    },
+    "user_id": {
+      "EQ":10084
+    },
+    "hk01_user_id":{
+      "EQ":1000120
+    },
+    "register_time":{
+      "EQ":"1532005213"
+    }
+
+  }
+}

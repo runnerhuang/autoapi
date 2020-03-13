@@ -1,0 +1,57 @@
+{
+    "new":  
+      { 
+      "class": "Common.util", 
+      "function": "random_int" ,
+      "key":"phone"
+    } ,
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/new_vendor",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"name":"自动化测试{{key.phone}}",
+                "description":"自动化测试商家简介",
+                "logo":"{{pre.eatojoy_pic}}",
+                "tags":"z001,y001,g001",
+                "spend":"40",
+                "vendor_type":2,
+                "prepare_time":"0",
+                "book_time_type":2,
+                "book_time_value":3,
+                "stocking_time_type":2,
+                "stocking_time":3,
+                "expiry_date_type":"1",
+                "expiry_date_value":1,
+                "business_code":"12345678910",
+                "district":"0",
+                "address":"餐厅详细地址",
+                "contact":"自动化",
+                "lon":"114.38817",
+                "lat":"22.0490721",
+                "business_time":"00:00~12:00,12:00~23:59",
+                "email":"zxs123456@qq.com",
+                "mobile":"{{key.phone}}",
+                "representative":"hhhh",
+                "borrow_device":1,
+                "device_info":"12312",
+                "has_cash_pledge":1,
+                "cash_pledge":1233,
+                "bank_num":"123456782",
+                "bank_owner":"hhh",
+                "bank_type":"hhhh",
+                "protocol_file":"/_docment/58625acfaefa1757a6e89b163002d4ab.jpg",
+                "protocol_name":"3M以下JPG.jpg",
+                "start_time":"2018-04-18",
+                "end_time":"2018-05-08",
+                "rate":"2",
+                "settlement_cycle":"0",
+                "remark":"1231231321",
+                "status":1
+			}
+	},
+    "key":{"vendor_id":"data.vendor_id"}
+}

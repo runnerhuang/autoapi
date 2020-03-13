@@ -1,0 +1,43 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/project/nav",
+                "headers": {
+                        "token": ""
+                },
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "formData",
+                                "description": "附件的md5值",
+                                "required": "true",
+                                "type": "string"
+                        },
+                        {
+                                "name": "data_id",
+                                "in": "formData",
+                                "description": "关联的数据id,例如删除合同下面的附件就是合同id",
+                                "required": "true",
+                                "type": "integer"
+                        },
+                        {
+                                "name": "from",
+                                "in": "formData",
+                                "description": "来源：\n     *          contract-合同，\n     *          intention-招商，\n     *          ad-广告位，\n     *          space-场地，\n     *          brand-品牌\n     *     ",
+                                "required": "true",
+                                "type": "string"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

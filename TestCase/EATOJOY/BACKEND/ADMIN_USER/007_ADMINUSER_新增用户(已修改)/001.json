@@ -1,0 +1,18 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/admin_user/create",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "user_name":"{{pre.eatojoy_phone}}user_name",
+                "email":"{{pre.eatojoy_phone}}@qq.com",
+                "name":"{{pre.eatojoy_phone}}name",
+                "group_ids":"1,2",
+                "status":1
+            }
+	},
+    "key":{"admin_user_id":"data.id"}
+}

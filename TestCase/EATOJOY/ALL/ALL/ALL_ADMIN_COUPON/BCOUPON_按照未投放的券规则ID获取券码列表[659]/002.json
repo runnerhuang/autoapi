@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/codelist",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"coupon_id":"{{key.coupon_id}}",
+				"page":1,
+				"pageSize":10
+			}
+	},
+    "output":{"data.list.0.code_status":{"EQ":1}, "code":{"EQ":0},"status":{"EQ":true},"data.list.0.code_status_text":{"EQ":"待投放"}}
+}

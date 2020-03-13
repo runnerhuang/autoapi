@@ -1,0 +1,17 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_android_url}}",
+			"rest": "/user/coupon/autopush",
+		    "headers":{
+				"Content-Type": "application/json",
+         	   "token":"{{pre.eatojoy_user_token}}"
+			},
+		    "param":{
+                "code":"{{key.coupon_code}}"
+            }
+	},
+	"output": {
+    "data":{"TYPE":"list"}, "code":{"EQ":80010},"status":{"EQ":false},"message":{"EQ":"僅限新用戶領取"}
+	}
+}

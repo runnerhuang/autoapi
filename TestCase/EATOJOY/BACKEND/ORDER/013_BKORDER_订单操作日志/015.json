@@ -1,0 +1,14 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/action_log",
+		    "headers":{"Content-Type": "application/json",
+                  "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+				"order_id":"{{key.order_id}}"
+            }
+	},
+    "output":{"data": {"TYPE": "dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

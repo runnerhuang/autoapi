@@ -1,0 +1,58 @@
+{
+        "input": {
+                "method": "post",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/parking/parking/parkingPrice",
+                "headers": {
+                        "app-version": "",
+                        "app-system": ""
+                },
+                "param": [
+                        {
+                                "name": "uc_id",
+                                "in": "query",
+                                "description": "parking.parking.getUcId接口返回",
+                                "required": false,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "ticket",
+                                "in": "query",
+                                "description": "车票标识或车牌",
+                                "required": true,
+                                "type": "string"
+                        },
+                        {
+                                "name": "way",
+                                "in": "query",
+                                "description": "0:车票 1:车牌",
+                                "required": true,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "score",
+                                "in": "query",
+                                "description": "抵扣多少积分",
+                                "required": false,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "unionId",
+                                "in": "query",
+                                "description": "unionId",
+                                "required": false,
+                                "type": "string"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

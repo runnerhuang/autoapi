@@ -1,0 +1,23 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/user/index/licensePlate",
+                "headers": {
+                        "app-version": "",
+                        "app-system": "",
+                        "token": ""
+                },
+                "param": []
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

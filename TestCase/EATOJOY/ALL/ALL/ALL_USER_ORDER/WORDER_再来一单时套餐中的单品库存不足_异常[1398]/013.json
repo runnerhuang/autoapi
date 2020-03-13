@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/food/edit_stock",
+		    "headers":{"Content-Type": "application/json",
+              "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+			},
+            "param":{
+                  "food_id":"{{key.food_id_1}}",
+                  "limited_stock": 1,
+                  "stock":0
+            }
+	}
+}

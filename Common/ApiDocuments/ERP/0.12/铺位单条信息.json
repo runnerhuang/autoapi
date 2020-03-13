@@ -1,0 +1,31 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.erp_url}}",
+                "rest": "/erp/shop/data",
+                "headers": {
+                        "token": "",
+                        "_page": "",
+                        "_page_size": ""
+                },
+                "param": [
+                        {
+                                "name": "id",
+                                "in": "query",
+                                "description": "数据id",
+                                "required": "true",
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

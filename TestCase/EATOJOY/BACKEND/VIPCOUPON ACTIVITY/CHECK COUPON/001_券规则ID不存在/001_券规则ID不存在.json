@@ -1,0 +1,19 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/check_coupon",
+		    "headers":{
+				"Content-Type": "application/json",
+                "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+      "param":{
+              "coupon_code":"000000"
+            }
+},
+
+        "output":{
+        "code":{"EQ":80002},
+        "status":{"EQ":false},
+        "message":{"EQ":"優惠券不存在"}}
+}

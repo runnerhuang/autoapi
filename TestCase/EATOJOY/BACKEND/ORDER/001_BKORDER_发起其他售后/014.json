@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/aftersales",
+		    "headers":{"Content-Type": "application/json",
+                  "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+                "order_id":"{{key.order_id}}",
+				"refund_type":3,
+                "refund_reason":"其他"
+            }
+	},
+    "output":{"data":{"EQ":true}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"發起售後成功！"}}
+}

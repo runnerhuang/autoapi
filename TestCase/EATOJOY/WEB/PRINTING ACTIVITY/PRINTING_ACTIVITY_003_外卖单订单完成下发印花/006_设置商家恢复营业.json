@@ -1,0 +1,20 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/vendor/open",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+				"vendor_id":"{{key.vendor_id}}",
+                "st":1
+			}
+	},
+    "output":{
+		"data":{"TYPE":"dict"},
+		"code":{"EQ":0},
+		"status":{"EQ":true},
+		"message":{"EQ":""}
+	}
+}

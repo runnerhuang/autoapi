@@ -1,0 +1,20 @@
+{ 
+  "public":  
+  [
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "BaseCheck" 
+    } ,
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "BankCheck" 
+    } ,
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "ProtocolCheck" 
+    } ,
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "AddType" 
+    },
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "VendorLogin" 
+    } 
+  ]
+}

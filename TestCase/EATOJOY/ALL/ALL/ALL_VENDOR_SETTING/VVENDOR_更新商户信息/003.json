@@ -1,0 +1,25 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/update",
+		    "headers":{"Content-Type": "application/json",
+              "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+			},
+            "param":{
+				"name":"更新商户信息",
+                "description":"自动化测试商家更新简介",
+                "logo":"/_docment/58625acfaefa1757a6e89b163002d4ab.jpg",
+                "spend":"100",
+                "prepare_time":"20",
+                "district":"1",
+                "address":"餐厅详细地址",
+                "contact":"自动化更新",
+                "lon":"114.38817",
+                "lat":"22.0490721",
+                "business_time":"01:00~11:00,13:00~22:59",
+                "email":"123456@qq.com"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":""}}
+}

@@ -1,0 +1,35 @@
+{
+	"new":  
+    { 
+      "class": "Common.util", 
+      "function":  "CheckOutTime" ,
+      "arg":2500,
+      "key":"take_food_time"
+    } ,
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/checkout",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"merchants_id": "{{key.vendor_id}}",
+			"order_product_counts":"{{key.product_num}}",
+			"order_grand_total":"{{key.order_grand_total}}",
+            "take_food_time":"{{key.take_food_time}}"
+		}
+	},
+	"output": {
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "下單成功"
+		}
+	},"key":{"order_id":"data"}
+}

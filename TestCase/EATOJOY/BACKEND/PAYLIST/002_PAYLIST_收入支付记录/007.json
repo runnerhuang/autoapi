@@ -1,0 +1,35 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/order/checkout",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"product_id": "{{key.food_id}}",
+			"merchants_id": "{{key.vendor_id}}",
+			"order_product_counts": "{{key.product_num}}",
+			"order_grand_total": "{{key.order_grand_total}}",
+            "take_food_time": "{{pre.eatojoy_take_food_time}}",
+			"package_fee":10,
+            "coupons_fee":0
+
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "str"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "下單成功"
+		}
+	},"key":{"order_id":"data"}
+}

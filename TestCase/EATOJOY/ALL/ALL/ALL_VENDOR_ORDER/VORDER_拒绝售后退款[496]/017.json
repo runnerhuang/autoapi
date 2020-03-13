@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "POST",
+			"url": "{{pre.eatojoy_ios_url}}",
+			"rest": "/vendor/order/refuserefund",
+		    "headers":{"Content-Type": "application/json",
+			"Cookie":"vendor_token={{pre.vendor_token}};vendor_id={{pre.vendor_id}}"
+			},
+            "param":{
+              "after_sales_id":"{{key.after_sales_id}}",
+              "refuse_reason":"拒绝原因",
+				"refund_price":"1230"
+            }
+	},
+    "output":{"data": {"EQ":true}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"拒絕售後退款成功! "}}
+}

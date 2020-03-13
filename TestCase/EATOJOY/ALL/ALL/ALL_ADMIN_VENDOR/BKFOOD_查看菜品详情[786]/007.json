@@ -1,0 +1,31 @@
+{
+  "input": {
+    "method":"GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/detail",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "vendor_id": "{{pre.vendor_id}}",
+      "food_id": "{{pre.food_id}}"
+    },
+    "output": {
+      "data": {
+        "TYPE": "dict"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    }
+  }
+}
+
+

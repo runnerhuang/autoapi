@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/aftersalesPs",
+		    "headers":{"Content-Type": "application/json",
+                  "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+              "after_sales_id":"{{key.after_sales_id}}"
+            }
+	},
+    "output":{"data": {"TYPE": "dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"查詢成功 !"},
+	"data.0.node_name":{"EQ":"平臺同意退款"},"data.1.node_name":{"EQ":"等待平臺處理"}}
+}

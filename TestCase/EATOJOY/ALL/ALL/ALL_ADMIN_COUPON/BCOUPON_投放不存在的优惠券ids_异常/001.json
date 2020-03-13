@@ -1,0 +1,15 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/coupon/launch",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+		    "param":{
+               "ids":"123456"
+            }
+	},
+    "output":{"data":{"TYPE":"list"}, "code":{"EQ":0},"status":{"EQ":false},"message":{"EQ":"優惠券不存在"}},
+    "key":{"coupon_id":"data.coupon_id"}
+}

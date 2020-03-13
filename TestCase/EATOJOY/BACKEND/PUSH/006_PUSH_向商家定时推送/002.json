@@ -1,0 +1,37 @@
+{
+	"new":  
+    {  "class": "Common.util", 
+    "function": "now",
+		"key":"push_time" 
+    } ,
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/admin/push/create",
+		"headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+		},
+		"param": {
+			"receiver":2,
+            "title":"推送标题",
+            "content":"推送内容",
+			"type":2,
+			"vendor_id":{{key.vendor_id}},
+			"push_time":"{{key.push_time}}"
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "int"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		}
+	},"sleep":5
+}

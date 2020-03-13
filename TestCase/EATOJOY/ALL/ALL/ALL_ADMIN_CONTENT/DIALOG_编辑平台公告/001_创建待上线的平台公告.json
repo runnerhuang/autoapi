@@ -1,0 +1,18 @@
+{
+	"input": {
+      "method": "POST",
+      "url": "{{pre.eatojoy_url}}",
+      "rest": "/admin/dialog/create",
+      "headers": {
+        "Content-Type": "application/json",
+        "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+      },
+      "param": {
+        "valid_time_start": "2023-04-04 00:00",
+        "valid_time_end": "2023-10-1 23:59",
+        "type": 4,
+        "status":1,
+        "content": "自动化平台公告内容：e肚仔正在发版，请稍后再使用，感谢您的支持！"
+      }
+    }
+}

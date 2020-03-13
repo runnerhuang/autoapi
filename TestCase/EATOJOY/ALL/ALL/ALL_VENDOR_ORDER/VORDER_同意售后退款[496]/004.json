@@ -1,0 +1,29 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/food/detail",
+		"headers": {
+			"Content-Type": "application/json",
+			"Cookie":"vendor_token={{pre.vendor_token}};vendor_id={{pre.vendor_id}}"
+		},
+		"param": {
+			"fid": "{{pre.food_id}}"
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": ""
+		}
+	},
+	"key":{"tag_id":"data.packages.0.package_id","sid1":"data.packages.0.package_tags.0.tag_id","sid2":"data.packages.0.package_tags.1.tag_id"}
+}

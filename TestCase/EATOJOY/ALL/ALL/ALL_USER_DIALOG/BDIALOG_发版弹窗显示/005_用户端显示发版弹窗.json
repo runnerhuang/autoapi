@@ -1,0 +1,27 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/banner/list",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+		}
+	},
+	"output": {
+		"data.content": {
+			"VIN": "最新的自动化发版弹窗内容"
+		},
+		"code": {
+			"EQ": 4200
+		},
+		"status": {
+			"EQ": false
+		},
+		"message": {
+			"EQ": ""
+		}
+	}
+}

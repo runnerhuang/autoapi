@@ -1,0 +1,84 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/create",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "vendor_id": "{{key.vendor_id}}",
+      "num": "4",
+      "type": "{{key.type_id}}",
+      "name": "自动化测试菜名",
+      "description": "自动化测试简介",
+      "images": "{{pre.eatojoy_pic}}",
+      "is_wine":1,
+      "price": 89.67,
+      "has_package": 1,
+      "limited_stock":0,
+      "stock":0,
+      "packages": [{
+        "package_name":"选项组1",
+        "package_type":"2",
+        "package_tags":[{
+          "food_id":"{{key.food_id_1}}",
+          "food_no":"1",
+          "tag_name":"单品1不含酒",
+          "tag_price":4.6
+          },
+          {
+            "food_id":"{{key.food_id_2}}",
+            "food_no":"2",
+            "tag_name":"单品2含酒",
+            "tag_price":8.87
+          }
+        ],
+        "package_remove":0
+      },
+        {
+          "package_name":"选项组2",
+          "package_type":"1",
+          "package_tags":[{
+              "food_id":"{{key.food_id_2}}",
+              "food_no":"3",
+              "tag_name":"仅套餐选项",
+              "tag_price":1.6
+            },
+            {
+              "tag_name":"非关联商品1",
+              "tag_price":3.9
+            },
+             {
+              "tag_name":"非关联商品2",
+              "tag_price":2
+            },
+              {
+              "tag_name":"非关联商品2",
+              "tag_price":1
+            }
+          ],
+         "package_remove":0
+        }
+      ]
+    },
+
+    "output": {
+      "data": {
+        "TYPE": "dict"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    }
+  },"key":{"food_id_4":"data.food_id"}
+}
+
+

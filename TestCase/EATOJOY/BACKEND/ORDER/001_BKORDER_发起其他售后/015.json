@@ -1,0 +1,14 @@
+{
+	"input":{
+			"method": "GET",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/order/afterlist",
+		    "headers":{"Content-Type": "application/json",
+                  "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+            "param":{
+            }
+	},
+    "output":{"data": {"TYPE": "dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"數據獲取成功 !"}},
+    "key":{"after_sales_id":"data.list.0.after_sales_id"}
+}

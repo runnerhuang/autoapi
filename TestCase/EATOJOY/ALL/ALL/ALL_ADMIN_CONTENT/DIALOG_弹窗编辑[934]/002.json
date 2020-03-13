@@ -1,0 +1,20 @@
+{
+	"input":{
+			"method": "POST",
+			"url":"{{pre.eatojoy_url}}",
+			"rest": "/admin/dialog/update",
+		    "headers":{"Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+			},
+			"param":{
+               "id":"{{key.id}}",
+               "name":"自动化测试编辑弹窗",
+               "image_path":"{{pre.eatojoy_pic}}",
+               "valid_time_start":"2022-10-1",
+               "valid_time_end":"2023-10-1",
+               "type":2,
+               "jump_url":"www.qq.com"
+            }
+	},
+    "output":{"data":{"TYPE":"dict"}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"success"}}
+}

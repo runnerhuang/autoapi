@@ -1,0 +1,44 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/mall/vouchers/index",
+                "headers": {
+                        "app-version": "",
+                        "app-system": ""
+                },
+                "param": [
+                        {
+                                "name": "type",
+                                "in": "query",
+                                "description": "券类型(获取全部传-1)",
+                                "required": true,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "_page",
+                                "in": "query",
+                                "description": "页码,默认1",
+                                "required": true,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "_page_size",
+                                "in": "query",
+                                "description": "每页长度",
+                                "required": true,
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}

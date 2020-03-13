@@ -1,0 +1,17 @@
+{ 
+  "public":  
+  [
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "CreateVendor" 
+    } ,
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "BaseCheck" 
+    } ,
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "BankCheck" 
+    } ,
+    {  "class": "ProjectPublic.EatojoyPublic.EatojoyPublic", 
+    "function": "ProtocolCheck" 
+    } 
+  ]
+}

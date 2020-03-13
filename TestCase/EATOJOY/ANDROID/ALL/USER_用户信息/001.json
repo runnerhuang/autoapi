@@ -1,0 +1,19 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_android_url}}",
+		"rest": "/user/user/index",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"status": {
+			"EQ": true
+		}
+	}
+}

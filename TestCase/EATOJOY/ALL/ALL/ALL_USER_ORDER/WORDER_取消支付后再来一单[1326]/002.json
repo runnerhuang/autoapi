@@ -1,0 +1,31 @@
+{
+	"input": {
+		"method": "GET",
+		"url": "{{pre.eatojoy_url}}",
+		"rest": "/user/cart/list",
+		"headers": {
+			"Content-Type": "application/json",
+            "token":"{{pre.eatojoy_user_token}}"
+		},
+		"param": {
+			"vendor_id": "{{pre.vendor_id}}",
+			"lon":"115.38817",
+			"lat":"23.0490721"
+
+		}
+	},
+	"output": {
+		"data": {
+			"TYPE": "dict"
+		},
+		"code": {
+			"EQ": 0
+		},
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "數據獲取成功 !"
+		}
+	},"key":{"id":"data.product_list.0.id","product_num":"data.product_list.len","order_grand_total":"data.price_total"}
+}

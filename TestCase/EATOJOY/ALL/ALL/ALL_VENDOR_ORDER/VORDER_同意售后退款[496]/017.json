@@ -1,0 +1,16 @@
+{
+	"input":{
+			"method": "POST",
+			"url": "{{pre.eatojoy_android_url}}",
+			"rest": "/vendor/order/confirmrefund",
+		    "headers":{"Content-Type": "application/x-www-form-urlencoded",
+			"Cookie":"vendor_token={{pre.vendor_token}};vendor_id={{pre.vendor_id}}"
+			},
+            "param":{
+              "after_sales_id":"{{key.after_sales_id}}",
+				"is-test":"yes"
+
+            }
+	},
+    "output":{"data": {"EQ":true}, "code":{"EQ":0},"status":{"EQ":true},"message":{"EQ":"確認售後退款成功! "}}
+}

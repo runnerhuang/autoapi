@@ -1,0 +1,26 @@
+{
+	"input": {
+		"method": "POST",
+		"url": "{{pre.eatojoy_ios_url}}",
+		"rest": "/vendor/sms/send",
+		"headers": {
+			"Content-Type": "application/json",
+              "Cookie":"vendor_token={{key.vendor_token}};vendor_id={{key.vendor_id}}"
+		},
+		"param": {
+			"mobile":{{pre.eatojoy_phone}},
+			"tpl":"vendor_bind"
+		}
+	},
+	"output": {
+		"status": {
+			"EQ": true
+		},
+		"message": {
+			"EQ": "success"
+		},
+		"code": {
+			"EQ": 0
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+  "input": {
+    "method": "GET",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/activity_printing/detail",
+    "headers": {
+      "Content-Type": "application/json",
+      "eatojoy-admin-api-key": "{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "id": "{{key.id}}"
+    }
+  },
+  "output": {
+    "status": {
+      "EQ":true
+    },
+    "message": {
+      "EQ": "success"
+    },
+    "feat_shops":{
+      "EQ":"{{pre.vendor_id}}"
+    },
+    "get_printing_value":{
+      "EQ":"20.00"
+    },
+    "printing_num":{
+      "EQ":6
+    }
+
+  }
+}

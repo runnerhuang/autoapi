@@ -1,0 +1,8 @@
+{
+ "sql":{
+      "command":"select activity_id from e_activity_printing_record WHERE order_id = {{key.order_id}}",
+   "db": "eatojoy"
+ },
+ "key":["activity_id"],
+ "output":{"activity_id":{"eq":"{{key.printing_acticity_id}}"}}
+}

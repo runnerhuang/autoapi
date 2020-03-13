@@ -1,0 +1,13 @@
+{
+  "public": [
+    {
+      "class": "ProjectPublic.BaiduPublic.BaiduPublic",
+      "function": "serachtest",
+      "arg": ""
+    },
+    {
+      "class": "ProjectPublic.BaiduPublic.BaiduPublic",
+      "function": "searchtest"
+    }
+  ]
+}

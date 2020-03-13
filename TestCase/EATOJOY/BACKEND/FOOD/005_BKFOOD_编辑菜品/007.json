@@ -1,0 +1,48 @@
+{
+  "input": {
+    "method": "POST",
+    "url": "{{pre.eatojoy_url}}",
+    "rest": "/admin/food/edit",
+    "headers": {
+      "Content-Type": "application/json",
+               "eatojoy-admin-api-key":"{{pre.eatojoy_bk_token}}"
+    },
+    "param": {
+      "vendor_id": "{{key.vendor_id}}",
+      "food_id":"{{key.food_id}}",
+      "num": "1234",
+      "type": 0,
+      "name": "编辑自动化测试菜名",
+      "description": "编辑自动化测试简介",
+      "images": "/eatojoy/6445362969d3c4d31872ca3201bcadd1.jpeg",
+      "price": 1234,
+      "has_package": 1,
+      "packages": [{
+        "package_name": "12",
+        "package_type": "1",
+        "package_tags": [
+          {
+            "tag_name": "123",
+            "tag_price": 123
+          }
+        ]
+      }]
+    },
+    "output": {
+      "data": {
+        "TYPE": "dict"
+      },
+      "code": {
+        "EQ": 0
+      },
+      "status": {
+        "EQ": true
+      },
+      "message": {
+        "EQ": ""
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,34 @@
+{
+        "input": {
+                "method": "get",
+                "url": "{{pre.rizili_woa_url}}",
+                "rest": "/helper/token/regToken",
+                "headers": {},
+                "param": [
+                        {
+                                "name": "mobile",
+                                "in": "formData",
+                                "description": "手机号码",
+                                "required": true,
+                                "type": "integer"
+                        },
+                        {
+                                "name": "regToken",
+                                "in": "formData",
+                                "description": "注册认证码,不填写则默认为手机号码",
+                                "required": false,
+                                "type": "integer"
+                        }
+                ]
+        },
+        "output": {
+                "code": 0,
+                "message": {
+                        "EQ": ""
+                },
+                "status": true,
+                "data": {
+                        "type": "dict"
+                }
+        }
+}
