@@ -7,7 +7,6 @@ ap = ArgumentParser(
 
 ap.add_argument('-F', dest='projectCaseFolder', action='store', type=str, nargs='?',
                 default='TestCase//BAIDU//LOGIN//LOGIN')
-# default='TestCase//EATOJOY//ALL//ALL')
 ap.add_argument('-N', dest='number', action="store", type=int, nargs='?',
                 default='002')  # single case number，if 0 then all
 ap.add_argument('-S', dest='sleep_time', action="store", type=float, nargs='?', default=0)
