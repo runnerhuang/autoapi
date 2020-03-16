@@ -32,6 +32,4 @@ Config/*.pyc
 ProjectPublic/*.pyc
 TestRunner/*.pyc
 TestRunner/__pycache__
-TestRunner/testRunner.py
-TestRunner/testRunner
 
