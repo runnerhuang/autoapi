@@ -37,11 +37,8 @@ class TestRunner(object):
 
         if email != 0:
             mail_rec = ([config.ReadConfig.get_email("email_receiver")][0]).split(",")
-            if config.ck != '0':
-                report_files = [report_file]
-                send_email(report_files, text, mail_rec, True)
-            else:
-                send_email(report_file, text, mail_rec, True)
+            send_email(report_file, text, mail_rec, True)
+
         if platform.system() == "Windows":
             os.popen("del {0}".format(text))
         else:
