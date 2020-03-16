@@ -125,7 +125,7 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
             part.add_header('Content-Disposition', 'attachment', filename="%s" % file_to_send)
             msg.attach(part)
 
-    sp = smtplib.SMTP_SSL("smtp.exmail.qq.com", port=465)
+    sp = smtplib.SMTP_SSL("smtp.qq.com", port=465)
     sp.set_debuglevel(0)
     sp.ehlo()
     sp.login(config.ReadConfig.get_email("email_sender"), config.ReadConfig.get_email("email_sender_password"))
