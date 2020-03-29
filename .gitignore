@@ -16,6 +16,7 @@ TestRunner/__init__.pyc
 TestRunner/log_result_2_text.pyc
 TestRunner/testReport.pyc
 TestRunner/testRunner.pyc
+Report/*
 *.pyc
 venv
 .idea
