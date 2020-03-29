@@ -2,7 +2,7 @@
   "public": [
     {
       "class": "ProjectPublic.BaiduPublic.BaiduPublic",
-      "function": "serachtest",
+      "function": "searchtest",
       "arg": ""
     },
     {

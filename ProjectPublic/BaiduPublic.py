@@ -13,7 +13,7 @@ class BaiduPublic(object):
         pass
 
     @staticmethod
-    def serachtest(context, *args):
+    def searchtest(context, *args):
         print("start：")
         url = preData["baidu_url"] + '/post'
         headers = {"context-type": "application/json"}
@@ -31,7 +31,6 @@ class BaiduPublic(object):
             print("返回：")
             print(ret.json()['data'])
             print(type(ret.json()['data']))
-            print(ret.json()['data']['employ2'])
 
             return True
         else:
