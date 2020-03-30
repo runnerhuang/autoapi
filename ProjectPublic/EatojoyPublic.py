@@ -63,7 +63,6 @@ class EatojoyPublic(object):
         ret = requests.post(url, json=data, headers=headers)
         if ret.json()["status"] == True:
             print("返回：")
-            print (ret.json())
             context.key_value.update({"vendor_id": ret.json()["data"]["vendor_id"]})
             print(context.key_value)
             return True

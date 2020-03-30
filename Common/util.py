@@ -57,7 +57,7 @@ def md5_secret(in_str, serect_key):
     :param serect_key:
     :return:
     """
-    md_str = in_str+"&secret="+serect_key
+    md_str = in_str + "&secret=" + serect_key
     # print md_str
     md = hashlib.md5()
     md.update(md_str.encode('utf-8'))
@@ -101,12 +101,13 @@ def get_value(property_path, data):
             is_optional = False
 
         try:
-            if k.count('1_1')==0:#临时规避data为{'1_1':{'id':1, 'name':'abc'},'2':{'id':2,'name':'cbd'}}的问题
+            if k.count('1_1') == 0:  # 临时规避data为{'1_1':{'id':1, 'name':'abc'},'2':{'id':2,'name':'cbd'}}的问题
                 idx = int(k)
             else:
-                idx=k
+                idx = k
             try:
-                if count == 1 and str(k).isdigit():#避免data为{'1':{'id':1, 'name':'abc'},'2':{'id':2,'name':'cbd'}}类似的问题
+                if count == 1 and str(
+                        k).isdigit():  # 避免data为{'1':{'id':1, 'name':'abc'},'2':{'id':2,'name':'cbd'}}类似的问题
                     temp = temp[str(idx)]
                 else:
                     temp = temp[idx]
@@ -123,7 +124,7 @@ def get_value(property_path, data):
                     try:
                         temp = temp[k]
                     except:
-                        print('无法取到%s正确的value值，请检查格式'%property_path)
+                        print('无法取到%s正确的value值，请检查格式' % property_path)
                         return False
             except KeyError as e:
                 if is_optional:
@@ -147,10 +148,11 @@ def decode_str(content, encoding='utf-8'):
     # hsm20180807  ascii
     return simplejson.dumps(content, encoding=encoding, indent=4, ensure_ascii=False)
 
+
 def eatojoy_date(day):
     import time
     stf_time = time.time()
-    time_end = stf_time + day*3600*24
+    time_end = stf_time + day * 3600 * 24
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M', x)
     return ret
@@ -160,6 +162,7 @@ def random_8int():
     import random
     x = random.randint(10000000, 99999999)
     return x
+
 
 def md5_sec(in_str):
     """
@@ -187,38 +190,38 @@ def get_device():
 
 
 def get_apk_path():
-        """
-        get test APK in prjPath
-        :return:basename
-        """
-        ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-        # print ROOT_DIR
-        apks = os.listdir(ROOT_DIR)
-        if len(apks) > 0:
-            for apk in apks:
-                basename = os.path.basename(apk)
-                if basename.split('.')[-1] == "apk":
-                    apk_path = os.path.abspath(os.path.join(ROOT_DIR, basename))
-                    return apk_path
-        else:
-            return None
+    """
+    get test APK in prjPath
+    :return:basename
+    """
+    ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    # print ROOT_DIR
+    apks = os.listdir(ROOT_DIR)
+    if len(apks) > 0:
+        for apk in apks:
+            basename = os.path.basename(apk)
+            if basename.split('.')[-1] == "apk":
+                apk_path = os.path.abspath(os.path.join(ROOT_DIR, basename))
+                return apk_path
+    else:
+        return None
 
 
 def now():
     import time
     stf_time = time.time()
-    time_end = stf_time+26
+    time_end = stf_time + 26
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
 
 
-
 def create_certificate():
     id0 = ''.join(str(i) for i in random.sample(range(0, 9), 2))
     id = ''.join(str(i) for i in random.sample(range(0, 9), 5))
-    ret = '44142219'+str(id0)+'101'+str(id)
+    ret = '44142219' + str(id0) + '101' + str(id)
     return int(ret)
+
 
 def now_time():
     import time
@@ -247,10 +250,12 @@ def now_hotel_dayafter(day_num):
     s = datetime.date.strftime(s, '%Y%m%d')
     return s
 
+
 def payday_ago(day_num):
     s = datetime.date.today() + datetime.timedelta(days=day_num)
     s = datetime.date.strftime(s, '%Y.%m.%d')
     return s
+
 
 def now_crm_dayafter(second):
     import time
@@ -270,7 +275,7 @@ def now_hotel_end():
     return ret
 
 
-def months_after(mon,day=None):
+def months_after(mon, day=None):
     import datetime
     ret = datetime.date.today() + relativedelta(months=+mon)
     if day != None:
@@ -286,6 +291,7 @@ def reduce_10s():
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
+
 
 def MIN_HM(second):
     import time
@@ -309,71 +315,79 @@ def random_str(chars, leng=20):
 def reduce_73h():
     import time
     stf_time = time.time()
-    time_end = stf_time - 73*3600
+    time_end = stf_time - 73 * 3600
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
+
 
 def increase_15h():
     import time
     stf_time = time.time()
-    time_end = stf_time + 15*3600
+    time_end = stf_time + 15 * 3600
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
+
 
 def increase_15m():
     import time
     stf_time = time.time()
-    time_end = stf_time + 15*60
+    time_end = stf_time + 15 * 60
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
+
 
 def increase_20m():
     import time
     stf_time = time.time()
-    time_end = stf_time + 20*60
+    time_end = stf_time + 20 * 60
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
+
 
 def increase_21m():
     import time
     stf_time = time.time()
-    time_end = stf_time + 21*60
+    time_end = stf_time + 21 * 60
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
+
 
 def increase_5m():
     import time
     stf_time = time.time()
-    time_end = stf_time + 5*60
+    time_end = stf_time + 5 * 60
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
+
 
 def increase_10d():
     import time
     stf_time = time.time()
-    time_end = stf_time + 24*3600*10 + 1200
+    time_end = stf_time + 24 * 3600 * 10 + 1200
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
+
 
 def increase_20d():
     import time
     stf_time = time.time()
-    time_end = stf_time + 24*3600*20 + 1200
+    time_end = stf_time + 24 * 3600 * 20 + 1200
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
 
+
 def add12days():
     import time
     stf_time = time.time()
-    time_end = stf_time + 1000*1000
+    time_end = stf_time + 1000 * 1000
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d', x)
     return ret
@@ -382,29 +396,35 @@ def add12days():
 def before12days():
     import time
     stf_time = time.time()
-    time_end = stf_time - 1000*1000
+    time_end = stf_time - 1000 * 1000
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d', x)
     return ret
+
 
 def random_int():
     import random
     x = random.randint(10000000, 99999999)
     return x
+
+
 def random_5int(*args):
     import random
     # x = random.randint(10000, 99999)
     x = ''.join(random.sample(string.ascii_letters + string.digits, 4))
-    return str(x)+'0'
+    return str(x) + '0'
+
+
 def random_11int(*args):
     import random
     x = random.randint(15000000000, 16000000000)
     return x
 
+
 def nextday():
     import time
     stf_time = time.time()
-    time_end = stf_time + 100*100
+    time_end = stf_time + 100 * 100
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d', x)
     return ret
@@ -418,7 +438,7 @@ def CsvData(k):
 
     data = csv.reader(open('/Users/shen/Desktop/work/x.csv'))
 
-    user_tokens =[]
+    user_tokens = []
     for i in data:
         user_token = []
         for j in i:
@@ -427,35 +447,38 @@ def CsvData(k):
 
     return user_tokens[k]
 
+
 def counter_int():
     import random
     x = random.randint(17100000000, 17799999999)
     return x
+
 
 def counter_int2():
     import random
     x = random.randint(15100000000, 15799999999)
     return x
 
+
 def counter_int3():
     import random
     x = random.randint(18100000000, 18699999999)
     return x
 
+
 def nowdata(second):
     import time
     stf_time = time.time()
-    time_end = stf_time+second
+    time_end = stf_time + second
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d-%H-%M-%S', x)
     return ret
 
 
-
 def CheckOutTime(second):
     import time
     stf_time = time.time()
-    time_end = stf_time+second
+    time_end = stf_time + second
     x = time.localtime(time_end)
     ret = time.strftime('%Y-%m-%d %H:%M:%S', x)
     return ret
@@ -467,42 +490,41 @@ def PrepareFoodTime(second):
     ret = time.strftime('%H:%M', x)
     return ret
 
+
 def OverTakeFoodTime():
     import time
     stf_time = time.time()
-    x = stf_time - 60*60*9
+    x = stf_time - 60 * 60 * 9
     print(x)
     return int(x)
 
 
 def OrderSnDB(order_id):
     order_id = int(order_id)
-    if order_id%100 < 10:
+    if order_id % 100 < 10:
         order_id = '0' + str(order_id)
         return order_id
     else:
-        return order_id%100
-
+        return order_id % 100
 
 
 def book_time(start, end):
     import time
-    start_day = time.strftime("%Y-%m-%d" , time.localtime(time.time() + int(start)*60*60*24))
-    end_day = time.strftime("%Y-%m-%d" , time.localtime(time.time() + int(end)*60*60*24))
+    start_day = time.strftime("%Y-%m-%d", time.localtime(time.time() + int(start) * 60 * 60 * 24))
+    end_day = time.strftime("%Y-%m-%d", time.localtime(time.time() + int(end) * 60 * 60 * 24))
 
-    return '{0}~{1}'.format(start_day,end_day)
-
-
+    return '{0}~{1}'.format(start_day, end_day)
 
 
 def today():
     import time
-    today = time.strftime("%Y-%m-%d" , time.localtime(time.time()))
+    today = time.strftime("%Y-%m-%d", time.localtime(time.time()))
 
     return today
 
+
 def activity_printing_time(second):
     import time
-    activity_time = time.strftime("%Y-%m-%d %H:%M" , time.localtime(time.time() + second))
+    activity_time = time.strftime("%Y-%m-%d %H:%M", time.localtime(time.time() + second))
 
     return activity_time

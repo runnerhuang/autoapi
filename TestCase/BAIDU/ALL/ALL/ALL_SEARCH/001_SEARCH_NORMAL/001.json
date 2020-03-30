@@ -1,0 +1,13 @@
+{
+  "public": [
+    {
+      "class": "ProjectPublic.BaiduPublic.BaiduPublic",
+      "function": "searchtest",
+      "arg": ""
+    },
+    {
+      "class": "ProjectPublic.BaiduPublic.BaiduPublic",
+      "function": "searchtest"
+    }
+  ]
+}
