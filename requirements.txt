@@ -7,4 +7,3 @@ dateutils == 0.6.6
 requests == 2.20.0
 selenium == 3.13.0
 jsonpath == 0.75
-TestLink-API-Python-client == 0.8.0
