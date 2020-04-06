@@ -13,30 +13,30 @@ pip install -r requirements.txt
 
 ###  工程项目运行方法：
 
-####  1.只运行某一个测试用例执行
+####  1.只运行某一个测试用例
 python main.py -F '测试路径的文件路径' -N 001  
 
 例子：  
 python main.py -F 'TestCase//EATOJOY//BACKEND//PUSH' -N 001
 意思是执行TestCase//EATOJOY//BACKEND//PUSH目录下001序号文件夹里的所有test cases，若不设置-N则运行该目录下所有用例
 
-####  2.运行同一目录下的某些测试用例执行(运行多个的时候，必须将-N的值设置成0)
+####  2.运行同一目录下的多个测试用例(运行多个的时候，必须将-N的值设置成0)
 
 python main.py -F '测试路径的文件路径' -CL '1,2'  
 
 例子：
 python main.py -F 'TestCase//EATOJOY//BACKEND//PUSH' -CL '1，2'
-意思是依次执行TestCase//EATOJOY//BACKEND//PUSH目录下001和002序号文件夹里的所有test cases
+意思是依次执行TestCase//EATOJOY//BACKEND//PUSH目录下001和002序号文件夹里的所有testcase  
 ps：若要运行多个路径下的用例则用;隔开，如-F 'TestCase//xxx//xx1;TestCase//xxx//xx2'
 
 ###  运行参数介绍：
 -F 必选，测试用例目录，约定一般放在TestCase目录下面，[目录命名规则](#jump)    
--N 可选，默认0(全部用例)，运行指定用例   
+-N 可选，默认0(全部用例)，运行指定单个用例   
 -CL 可选，默认空，运行多个用例 **【此参数与-N互斥，优先-N】**  
--TD 可选，默认1 （默认不执行teardown，0表示执行）
--ENV 可选，默认test为测试环境，切换环境参数（项目配置中"项目名称_test.ini"代表项目测试环境的配置)  
+-TD 可选，默认1 （默认不执行teardown，0表示执行）  
+-ENV 可选，默认test为测试环境，切换环境参数（项目配置中"项目名称_test.ini"代表项目测试环境的配置)   
 -E 可选，默认0表示不发邮件，-E 1表示为发邮件（邮件接受人配置为项目ini文件中）  
--DR 可选，默认0表示不执行项目数据准备文件，-DR 1表示执行项目数据准备文件（项目准备的意思是执行用例前准备一些共用的数据，
+-DR 可选，默认0表示不执行项目数据准备文件，-DR 1表示执行项目数据准备文件（项目准备的意思是执行用例前准备一些共用的数据，  
 函数放在TestData文件夹下的"项目名称_dataReady"文件中）  
 -RR 可选，默认为0表示为失败不重跑，-RR 1表示为用例失败后重跑一次，-RR 2表示为用例失败后重跑两次   
 -LP 可选，默认0，循环执行，例如：-LP 1000 执行1000次
