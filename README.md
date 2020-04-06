@@ -34,7 +34,7 @@ ps：若要运行多个路径下的用例则用;隔开，如-F 'TestCase//xxx//x
 -N 可选，默认0(全部用例)，运行指定用例   
 -CL 可选，默认空，运行多个用例 **【此参数与-N互斥，优先-N】**  
 -TD 可选，默认1 （默认不执行teardown，0表示执行）
--ENV 可选，默认'test' 切换环境参数，默认为测试环境（项目配置中"项目名称_test.ini"代表项目测试环境的配置)  
+-ENV 可选，默认test为测试环境，切换环境参数（项目配置中"项目名称_test.ini"代表项目测试环境的配置)  
 -E 可选，默认0表示不发邮件，-E 1表示为发邮件（邮件接受人配置为项目ini文件中）  
 -DR 可选，默认0表示不执行项目数据准备文件，-DR 1表示执行项目数据准备文件（项目准备的意思是执行用例前准备一些共用的数据，
 函数放在TestData文件夹下的"项目名称_dataReady"文件中）  
@@ -118,7 +118,7 @@ output这里是为了检查每个返回值的类型/具体值/或者其他定义
 }
 ```
 {{pre.token}}:指的是在TestData/项目名_data文件中的preData数组里的变量值，用于保存一些可以重复使用的变量，例如token，url
-{{key.code}}:指的是调用在本次执行的test cases中前几个测试步骤保存的ke值  
+{{key.code}}:指的是调用在本次执行的test cases中前几个测试步骤保存的key值  
 key:为在当前步骤需要保存的某个返回key值对应的value, 如果保存之前已经有当前key值存在,当前的key,value对会被更新替换。如不需要保存key可以
 不带此健或为空。  
 "sleep":5:指的是睡眠5秒  
@@ -126,10 +126,11 @@ key:为在当前步骤需要保存的某个返回key值对应的value, 如果保
 
 ##  四.测试用例文件名命名：
 ###  1. <a id="jump">TestCase//项目名称//平台端//功能模块//测试用例名称 </a>
-**项目名称**：EATOJOY等等  
-**平台端**：BACKEND（后台），VENDOR（商家端）看项目情况而视，做到能区分自己在写哪一部分的测试用例即可  
-**功能模块**：LOGIN（登录模块），PAY（支付模块）方便大家寻找这是哪个功能模块的测试用例  
-**测试用例名称**：LOGIN_001_登录正确的用户_异常/正常 也是为了方便大家看懂这个测试用例的意思
+*示例：*  
+**项目名称**：EATOJOY  
+**平台端**：BACKEND（后台），VENDOR（商家端）   
+**功能模块**：LOGIN（登录模块），PAY（支付模块）   
+**测试用例名称**：LOGIN_001_登录正确的用户_异常/正常，尽量使用意思明切的命名  
 
 ###  2.测试步骤文件命名
 001.json,002.json严格按照数字大小区分测试步骤顺序
@@ -140,8 +141,7 @@ key:为在当前步骤需要保存的某个返回key值对应的value, 如果保
    -  命名:项目名_环境.ini  
         ```如E肚仔测试test环境：eatojoy_test.ini```
    -  模块:project_info,test_db,email_info,url
-   -  代码内调用配置 
-   -  [test_link]需要设置testlink的测试计划(testplan)，测试版本(build)，测试平台(platform)，测试项目(project)
+   -  代码内调用配置   
 举例:   
   ```
   from Config import config
@@ -157,14 +157,14 @@ key:为在当前步骤需要保存的某个返回key值对应的value, 如果保
 ### 3.配置公用模块函数ProjectPublic
    -  命名:项目名Public.py  
         ```如E肚仔：EatojoyPublic.py```
-   -  模块:创建一个class，通过调用class的静态方法@staticmethod，如EatojoyPublic
+   -  模块:创建一个class，通过调用class的静态方法@staticmethod，如EatojoyPublic.CreateVendor  
    
 ### 4.编写用例TestCase
-1.覆盖接口文档中能实现接口自动化的接口
-2.没有充裕的时间可以只覆盖所有接口能够请求成功的用例，有充裕的时间可以对接口进行一些参数的异常值分析，但是重要业务的接口要覆盖所有的情况，比如说支付，就要写UUU的用例，支付失败的用例，重复支付的用例，超时支付的用例（就是不单单只写UUU的用例）
+1.覆盖接口文档中能实现接口自动化的接口  
+2.时间不充裕可以只覆盖所有接口能够请求成功的用例，有充裕的时间可以对接口进行一些参数的异常值分析，但是重要业务的接口要覆盖所有的情况，比如说支付的用例，支付失败的用例，重复支付的用例，超时支付的用例  
 例如：
-XXX参数为0，XXX参数为-1，XXX参数为int值的最大值，XXX参数为int值的最小值，XXX参数为int值的最大值+1，XXX参数为int值的最小值-1，XXX参数为float类型，XXX参数为string类型，XXX参数为空，XXX参数为空格等等
-3.尽量更多的覆盖到所有的业务场景，例如某个接口有一个参数有多种类型，就要把所有类型都走一遍
+XXX参数为0，XXX参数为-1，XXX参数为int值的最大值，XXX参数为int值的最小值，XXX参数为int值的最大值+1，XXX参数为int值的最小值-1，XXX参数为float类型，XXX参数为string类型，XXX参数为空，XXX参数为空格等等  
+3.尽量更多的覆盖到所有的业务场景，例如某个接口有一个参数有多种类型，就要把所有类型都走一遍  
 例如：
 商家拒单类型为：其他原因，商家拒单类型为：商家备料不足，商家拒单类型为：商家暂停营业，商家拒单类型为：商家订单超载，商家拒单类型为：无法按时出餐，商家拒单类型为：用户要求取消订单等等
 ### 5.公共函数
@@ -196,7 +196,7 @@ XXX参数为0，XXX参数为-1，XXX参数为int值的最大值，XXX参数为in
     ]
     }
    ```
-   上述描述的是执行的是公共函数,在ProjectPublic//HotelPublic路径下的HotelPublic类class的GetCodeLogin方法
+   上述为执行公共函数,在ProjectPublic//HotelPublic路径下的HotelPublic类class的GetCodeLogin方法  
    另外一种写法，可以与http接口混合在还一起
    001.json:
 
@@ -221,7 +221,7 @@ XXX参数为0，XXX参数为-1，XXX参数为int值的最大值，XXX参数为in
             "num": 1,
             "start": "{{pre.hotel_date_start}}",
             "end": "{{pre.hotel_date_end}}",
-            "linkman": "钟祥慎",
+            "linkman": "hsm",
 			"is_me": 0
 		}
 	},"key":{"order_id":"data.orderSn"}
@@ -259,8 +259,8 @@ XXX参数为0，XXX参数为-1，XXX参数为int值的最大值，XXX参数为in
     }
    ```
    上述描述的是执行的是创建相关key值函数,在Common//util路径下的random_11int方法返回的值保存在phone中，
-   在接下来的用例中使用{{key.phone}}调用
-   另外一种写法，可以与http接口混合在还一起
+   在接下来的用例中使用{{key.phone}}调用  
+   另外一种写法，可以与http接口混合一起  
    
    001.json:
    ```
@@ -288,7 +288,7 @@ XXX参数为0，XXX参数为-1，XXX参数为int值的最大值，XXX参数为in
             "num": 1,
             "start": "{{pre.hotel_date_start}}",
             "end": "{{pre.hotel_date_end}}",
-            "linkman": "钟祥慎",
+            "linkman": "hsm",
 			"is_me": 0
 		}
 	},"key":{"order_id":"data.orderSn"}
