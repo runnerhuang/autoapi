@@ -16,6 +16,10 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
     :param attachment attachment to send selection.
     """
     folder = config.folder
+    project = config.ReadConfig.get_project("project").upper()
+    version = config.ReadConfig.get_project("version")
+    env = config.env
+
     if "/" in folder:
         folder = folder.replace("/", "_")
     if "\\" in folder:
@@ -28,7 +32,8 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
     time_str = time.strftime("%Y-%m-%d %X", time.localtime())
     # Set the server and the message details
     send_from = '%s' % config.ReadConfig.get_email("email_sender")
-    subject = "Automation TestReport FOR {0} {1}".format(folder, time_str)
+    # subject = "Automation TestReport FOR {0} {1}".format(folder, time_str)
+    subject = "API Automation TestReport FOR {0}_{1}-{2} {3} {4}".format(project, version, env, folder, time_str)
     # Create the multi-part
     msg = MIMEMultipart()
     msg['Subject'] = subject
@@ -64,10 +69,10 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
                     <html>
                       <head></head>
                       <body>
-                            <h1>自动化测试报告<br /></h1>
+                            <h1>接口自动化测试报告<br /></h1>
                             Dear ALL,<br />
                             <br />
-                            以下是这次自动化测试结果: <br />
+                            以下是这次接口自动化测试结果: <br />
                             执行测试用例总数（ALL） ：{0} <br />
                             通过测试用例数（PASS）  ：{1} <br />
                             <font color="#FF0000">失败测试用例数（FAIL）  ：{2}</font> <br />
@@ -84,16 +89,16 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
                             温馨提示：如果您看到的邮件是乱码，请将邮箱的查看编码格式设置为UTF-8，具体请参考不同邮箱客户端的设置。<br />
                       </body>
                     </html>
-                """.format(a_count, p_count, f_count, e_count, values, file_to_send, file_to_send)
+                """.format(a_count, p_count, f_count, e_count, values, file_to_send)
     else:
         html = """
             <html>
               <head></head>
               <body>
-                    <h1>自动化测试报告<br /></h1>
+                    <h1>接口自动化测试报告<br /></h1>
                     Dear ALL,<br />
                     <br />
-                    以下是这次自动化测试结果:<br />
+                    以下是这次接口自动化测试结果:<br />
                     执行测试用例总数（ALL） ：{0}<br />
                     通过测试用例数（PASS）  ：{1}<br />
                     失败测试用例数（FAIL）  ：{2}<br />
@@ -107,7 +112,7 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
                     温馨提示：如果您看到的邮件是乱码，请将邮箱的查看编码格式设置为UTF-8，具体请参考不同邮箱客户端的设置。<br />
               </body>
             </html>
-        """.format(a_count, p_count, f_count, e_count, file_to_send, file_to_send)
+        """.format(a_count, p_count, f_count, e_count, file_to_send)
     html = MIMEText(html, 'html', _charset='utf-8')
     msg.attach(html)
     if attachment:

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import chardet
 
-def log(txt, content):
 
+def log(txt, content):
     ch = chardet.detect(content.encode('utf-8'))
     # content = content.decode(ch).encode("utf-8")
     fd = open(txt, 'a+')

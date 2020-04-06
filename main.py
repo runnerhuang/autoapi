@@ -11,7 +11,7 @@ ap.add_argument('-N', dest='number', action="store", type=int, nargs='?', defaul
 ap.add_argument('-S', dest='sleep_time', action="store", type=float, nargs='?', default=0)
 ap.add_argument('-TC', dest='testcases', action="store", type=str, nargs='?', default="")  # 多例
 ap.add_argument('-TD', dest="teardown", action="store", type=int, nargs='?', default=1)  # 是否运行teardown,默认1不执行
-ap.add_argument('-E', dest="email", action="store", type=int, nargs="?", default=0)  # 0不发email，非0发
+ap.add_argument('-E', dest="email", action="store", type=int, nargs="?", default=1)  # 0不发email，非0发
 ap.add_argument('-ENV', dest="env", action="store", type=str, nargs='?', default='test')  # run env
 ap.add_argument('-DR', dest="dataready", action="store", type=int, nargs='?', default=0)  # 是否在用例执行前准备数据
 ap.add_argument('-RR', dest="rerun", action="store", type=int, nargs='?', default=0)  # 是否重跑并重跑几次

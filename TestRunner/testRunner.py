@@ -44,7 +44,6 @@ class TestRunner(object):
         else:
             os.popen("rm {0}".format(text))
 
-
         try:
             driver = webdriver.Firefox()
         except BaseException:
@@ -52,4 +51,3 @@ class TestRunner(object):
         else:
             report_url = report_file.replace(os.path.dirname(os.getcwd()), 'http://localhost:63342')
             driver.get(report_url)
-

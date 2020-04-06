@@ -4,7 +4,7 @@
 # @Desc  :
 
 
-from Common.util import reduce_10s, increase_15m, random_int, increase_21m, md5_s, random_8int
+from Common.util import random_int, md5_s, random_8int
 from Config import config
 
 preData = {
