@@ -5,7 +5,7 @@ from Config import config
 
 
 class TestReport(object):
-    folder = config.folder  # os.environ.get('projectCaseFolder', "TestCase\\API\\POS\\11")
+    folder = config.folder  # os.environ.get('PROJECT_CASE_FOLDER', "TestCase\\API\\POS\\11")
     if "/" in folder:
         folder = folder.replace("/", "_")
     if "\\" in folder:

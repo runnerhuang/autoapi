@@ -44,6 +44,7 @@ class Context(object):
     """
     Define the Context to store the return value.
     """
+
     def __init__(self):
         self.key_value = {}
 
@@ -56,7 +57,7 @@ def template_json(context, filename):
     """
     # value = open(filename).read()
 
-    with open(filename,encoding='utf-8') as f:
+    with open(filename, encoding='utf-8') as f:
 
         try:
             value = f.read()
@@ -84,7 +85,7 @@ def check_data(context, filename):
     :return:  布尔（True或者False）
     """
     val = template_json(context, filename)
-    if type(val)!=dict:
+    if type(val) != dict:
         return False
     if "author" in val.keys():
         print("测试用例编写责任人：{0}".format(val["author"]))
@@ -171,7 +172,7 @@ def check_data(context, filename):
                                 print("执行返回值为{0}:{1}".format(val["new"]["key"][j], value))
                     else:
                         context.key_value.update({val["new"]["key"]: value})
-                        print("执行返回值为{0}:{1}".format(val["new"]["key"],value))
+                        print("执行返回值为{0}:{1}".format(val["new"]["key"], value))
         val = template_json(context, filename)
     if "public" in val.keys():
         print("调用公共函数执行 \n")
@@ -223,11 +224,11 @@ def check_data(context, filename):
                     for each in command:
                         result = exec_sql(each, db)
                         # print result
-                    # for item in command:
+                        # for item in command:
                         if "SELECT" in each or "select" in each:
                             if "key" in val.keys() and isinstance(val["key"], list):
                                 for i, item1 in enumerate(val["key"]):
-                                    print (result[0][i])
+                                    print(result[0][i])
                                     context.key_value.update({item1: result[0][i]})
                             else:
                                 context.key_value.update({val["key"]: result[-1][-1]})
@@ -314,7 +315,7 @@ def check_data(context, filename):
                 data = val["mock"]
         end_time = time.time()
         print("*" * 100)
-        print("\n接口请求响应时延为:\n {0}\n".format(end_time-start_time))
+        print("\n接口请求响应时延为:\n {0}\n".format(end_time - start_time))
         print("\n接口请求返回值:")
         if isinstance(data, tuple):
             if "JSESSIONID" in data[0]:
@@ -458,7 +459,7 @@ def case_list(case_path):
     """
     for root, dirs, files in os.walk(case_path):
         cases = dirs
-        cases.sort() #OSX系统遍历的文件会乱序，Windows没有这个问题
+        cases.sort()  # OSX系统遍历的文件会乱序，Windows没有这个问题
         return cases
 
 
@@ -478,6 +479,8 @@ def get_test_steps(path_dir, case):
 
 rerun = 1 + int(config.rr)
 flag_rerun = 0
+
+
 def check_case(con, cases):
     """
     运行所有测试用例的使用方法。
@@ -485,34 +488,34 @@ def check_case(con, cases):
     :param cases: 所有测试用例列表。
     :return: 返回检查结果（boolean）
     """
-    sleep_time = float(os.environ.get('SLEEP_TIME', 0))
+    sleep_time = config.sleeptime
     mark = 0
-    global flag_rerun,rerun
+    global flag_rerun, rerun
     flag_rerun = flag_rerun + 1
     if flag_rerun > 1:
         print("-" * 100)
-        print('开始重跑第{}次'.format(flag_rerun-1))
+        print('开始重跑第{}次'.format(flag_rerun - 1))
         print("-" * 100)
 
     print(cases)
     for x, item in enumerate(cases, 1):
         print("测试步骤%d : " % x)
-        print("-"*100)
+        print("-" * 100)
         if check_data(con, item):
             mark += 1
         else:
-            print("测试步骤%d失败。\n" % x + "-"*100)
+            print("测试步骤%d失败。\n" % x + "-" * 100)
             if flag_rerun == rerun:
                 return False
             else:
                 tear_down(con)
-                if check_case(con,cases):
+                if check_case(con, cases):
                     return True
                 else:
                     return False
             # tear_down(con)
             # return False
-        print("-"*100+"\n")
+        print("-" * 100 + "\n")
         time.sleep(sleep_time)
     if mark == len(cases):
         return True
@@ -535,7 +538,7 @@ class UnitTest(unittest.TestCase):
 
         config.reruns.append(flag_rerun)
         unittest.TestCase.tearDown(self)
-        if config.td == "0":#判断是否要做teardown处理
+        if config.td == "0":  # 判断是否要做teardown处理
             tear_down(self.context)
         self.end_time = time.time()
         config.time.append(Decimal(self.end_time - self.start_time).quantize(Decimal('0.00')))
@@ -550,8 +553,10 @@ class UnitTest(unittest.TestCase):
         :param steps: 测试步骤
         :return: 调用单元测试中的run_case执行测试。
         """
+
         def func(self):
             self.run_case(steps)
+
         return func
 
 
@@ -571,7 +576,7 @@ class UnitTest(unittest.TestCase):
 #         for j in range(len(cases)):
 #             steps = get_test_steps(suite_dir, cases[j])
 #             lists.append(steps)
-#     item = int(config.item)  # int(os.environ.get('UT_ITEM', 0))
+#     item = int(config.item)  # int(os.environ.get('NUMBER', 0))
 #     items = config.items.split(",")  # os.environ.get("CASELIST", "").split(",")
 #     testlist = config.testlist
 #     print('-' * 100)
@@ -600,6 +605,8 @@ class UnitTest(unittest.TestCase):
 
 
 loop = int(config.lp)
+
+
 def suite():
     lists = []
     caselist = []
@@ -613,7 +620,8 @@ def suite():
         for item in cases:
             if item.startswith("ALL_") == True:
                 all_flag = all_flag + 1
-                suite_dir = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")), each+'//'+item)
+                suite_dir = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")),
+                                         each + '//' + item)
                 all_suite_dir.append(suite_dir)
                 all_case = case_list(suite_dir)
                 all_cases.update({suite_dir: all_case})
@@ -631,16 +639,16 @@ def suite():
                     steps = get_test_steps(all_suite_dir[j], k)
                     lists.append(steps)
 
-    item = int(config.item)  # int(os.environ.get('UT_ITEM', 0))
+    item = int(config.item)  # int(os.environ.get('NUMBER', 0))
     items = config.items.split(",")  # os.environ.get("CASELIST", "").split(",")
     testlist = config.testlist
     print('-' * 100)
     if item == -1 and items == [""]:
-        if loop>0:
+        if loop > 0:
             print('当前选择所有测试用例执行' + '，并重复%d次' % loop)
             for i in range(len(lists)):
                 for l in range(loop):
-                    test_func = "test_" + caselist[i] + '_%d' % (l+1)
+                    test_func = "test_" + caselist[i] + '_%d' % (l + 1)
                     setattr(UnitTest, test_func, UnitTest.get_test_func(lists[i]))
         else:
             print('当前选择所有测试用例执行。')
@@ -652,18 +660,18 @@ def suite():
             print('当前选择用例%s测试用例执行' % items + '，并重复%d次' % loop)
             for l in range(loop):
                 for each in items:
-                    test_func = "test_" + caselist[int(each)-1] + '_%d' % (l+1)
-                    setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each)-1]))
+                    test_func = "test_" + caselist[int(each) - 1] + '_%d' % (l + 1)
+                    setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each) - 1]))
         else:
             print('当前选择用例%s测试用例执行：' % items)
             for each in items:
-                test_func = "test_" + caselist[int(each)-1]
-                setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each)-1]))
+                test_func = "test_" + caselist[int(each) - 1]
+                setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each) - 1]))
     elif item != -1 and items == [""]:
         if loop > 0:
             print('当前选择第%d个用例执行测试' % (item + 1) + '，并重复%d次' % loop)
             for l in range(loop):
-                test_func = "test_" + caselist[item] + '_%d' % (l+1)
+                test_func = "test_" + caselist[item] + '_%d' % (l + 1)
                 setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
         else:
             print('当前选择第%d个用例执行测试。' % (item + 1))
@@ -673,7 +681,7 @@ def suite():
         if loop > 0:
             print('当前选择第%d个用例执行测试' % (item + 1) + '，并重复%d次' % loop)
             for l in range(loop):
-                test_func = "test_" + caselist[item] + '_%d' % (l+1)
+                test_func = "test_" + caselist[item] + '_%d' % (l + 1)
                 setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
         else:
             print('当前选择第%d个用例执行测试。' % (item + 1))
@@ -685,8 +693,8 @@ def suite():
             for l in range(loop):
                 val_list = testlist.split(":")
                 for each in range(val_list[0], val_list[1]):
-                    test_func = "test_" + caselist[int(each)-1]
-                    setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each)-1]))
+                    test_func = "test_" + caselist[int(each) - 1]
+                    setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each) - 1]))
         else:
             print('当前选择第%s用例执行测试。' % (testlist))
             val_list = testlist.split(":")
@@ -697,5 +705,3 @@ def suite():
     suit = unittest.TestSuite()
     suit.addTest(unittest.makeSuite(UnitTest))
     return suit
-
-
