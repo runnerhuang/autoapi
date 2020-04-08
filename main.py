@@ -9,7 +9,7 @@ ap.add_argument('-F', dest='project_case_folder', action='store', type=str, narg
                 default='TestCase//BAIDU//LOGIN//LOGIN')
 ap.add_argument('-N', dest='number', action="store", type=int, nargs='?', default='1')  # 单例，0-all
 ap.add_argument('-S', dest='sleep_time', action="store", type=float, nargs='?', default=0)
-ap.add_argument('-TC', dest='testcases', action="store", type=str, nargs='?', default="")  # 多例,默认空g
+ap.add_argument('-TC', dest='testcases', action="store", type=str, nargs='?', default="")  # 多例,默认空
 ap.add_argument('-TD', dest="teardown", action="store", type=int, nargs='?', default=1)  # 是否运行teardown,默认1不执行
 ap.add_argument('-E', dest="email", action="store", type=int, nargs="?", default=0)  # 0不发email，非0发
 ap.add_argument('-ENV', dest="env", action="store", type=str, nargs='?', default='test')  # run env
