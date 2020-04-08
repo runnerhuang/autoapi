@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Date  : 2018/8/2 下午4:27
 # @Author: Runner
-# @Desc  : Read config data, project,db,email,url
+# @Desc  : read config data, project,db,email,url
 
 import os
 import configparser

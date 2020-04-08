@@ -1,4 +1,6 @@
 import re
+
+
 # from util import decode_str
 
 
@@ -17,7 +19,7 @@ def type_validator(params, value):
         if len(params) == mark:
             return True
     elif type(params).__name__ == value:
-            return True
+        return True
     return False
 
 
@@ -151,6 +153,7 @@ def greater_validator(params, value):
             return True
     return False
 
+
 def gv_validator(params, value):
     if isinstance(value, int):
         if params > value:
@@ -160,6 +163,7 @@ def gv_validator(params, value):
             return True
     return False
 
+
 def lv_validator(params, value):
     if isinstance(value, int):
         if params < value:
@@ -168,6 +172,7 @@ def lv_validator(params, value):
         if params < eval(value):
             return True
     return False
+
 
 def less_validator(params, value):
     if params <= eval(value):
@@ -303,4 +308,3 @@ def checker(typo, params, value):
     if typo == "vin":
         val.register("vin", value_in_validator(params, value))
     return val.registry[typo]
-

@@ -95,7 +95,7 @@ Version in 0.7.1
 import datetime
 # import StringIO
 import io
-import os
+# import os
 import sys
 # import time
 import unittest

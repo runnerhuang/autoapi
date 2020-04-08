@@ -1,5 +1,5 @@
 # coding=UTF-8
-
+#  import jsonpath
 import re
 import simplejson
 from jinja2 import Template
@@ -16,7 +16,6 @@ from ProjectPublic.tearDown import tear_down
 from Common.run_public import exe_module
 import importlib
 from decimal import Decimal
-import jsonpath
 
 project_data = importlib.import_module("TestData."'{0}_data'.format(config.ReadConfig.get_project("project").lower()))
 folder = config.folder
@@ -608,10 +607,10 @@ loop = int(config.lp)
 
 
 def suite():
-    lists = []
+    lists = []  # steps
     caselist = []
-    all_suite_dir = []
-    all_cases = {}
+    all_suite_dir = []  # testsuite dir
+    all_cases = {}  # {testsuite dir:casename}
     all_flag = 0
     folders = folder.split(";")
     for i, each in enumerate(folders):
@@ -640,10 +639,10 @@ def suite():
                     lists.append(steps)
 
     item = int(config.item)  # int(os.environ.get('NUMBER', 0))
-    items = config.items.split(",")  # os.environ.get("CASELIST", "").split(",")
+    items = config.items.split(",")  # os.environ.get("TESTCASES", "").split(",")
     testlist = config.testlist
     print('-' * 100)
-    if item == -1 and items == [""]:
+    if item == -1 and items == [""]:  # -N和-TC都未设置值
         if loop > 0:
             print('当前选择所有测试用例执行' + '，并重复%d次' % loop)
             for i in range(len(lists)):
@@ -655,7 +654,7 @@ def suite():
             for i in range(len(lists)):
                 test_func = "test_" + caselist[i]
                 setattr(UnitTest, test_func, UnitTest.get_test_func(lists[i]))
-    elif item == -1 and items != [""]:
+    elif item == -1 and items != [""]:  # -N为空 -TC有值
         if loop > 0:
             print('当前选择用例%s测试用例执行' % items + '，并重复%d次' % loop)
             for l in range(loop):
@@ -667,7 +666,7 @@ def suite():
             for each in items:
                 test_func = "test_" + caselist[int(each) - 1]
                 setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each) - 1]))
-    elif item != -1 and items == [""]:
+    elif item != -1 and items == [""]:  # -N有值 -TC为空
         if loop > 0:
             print('当前选择第%d个用例执行测试' % (item + 1) + '，并重复%d次' % loop)
             for l in range(loop):
@@ -677,7 +676,7 @@ def suite():
             print('当前选择第%d个用例执行测试。' % (item + 1))
             test_func = "test_" + caselist[item]
             setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
-    elif item != -1 and items != [""]:
+    elif item != -1 and items != [""]: # -N -TC都有值
         if loop > 0:
             print('当前选择第%d个用例执行测试' % (item + 1) + '，并重复%d次' % loop)
             for l in range(loop):
@@ -687,7 +686,7 @@ def suite():
             print('当前选择第%d个用例执行测试。' % (item + 1))
             test_func = "test_" + caselist[item]
             setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
-    elif testlist != "":
+    elif testlist != "":  #TODO
         if loop > 0:
             print('当前选择第%s用例执行测试。' % (testlist) + '，并重复%d次' % loop)
             for l in range(loop):
