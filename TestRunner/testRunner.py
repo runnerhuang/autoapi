@@ -18,7 +18,10 @@ class TestRunner(object):
         # import importlib  closed 20180802
         # m = importlib.import_module("ApiExecutor.API", 'API')
         from Common import API
-        t_suite.addTest(API.suite())
+        if config.runlist > 0:  # add 202004
+            t_suite.addTest(API.suite_file())
+        else:
+            t_suite.addTest(API.suite())
         return t_suite
 
     @staticmethod

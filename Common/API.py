@@ -1,5 +1,6 @@
 # coding=UTF-8
 #  import jsonpath
+import codecs
 import re
 import simplejson
 from jinja2 import Template
@@ -564,7 +565,7 @@ class UnitTest(unittest.TestCase):
 #     本地执行产生对应的test suite。
 #     :return:  产生testsuite 把所有用例传递到UnitTest中的get_test_func进行测试。
 #     """
-#     lists = []
+#     step_lists = []
 #     caselist = []
 #     folders = folder.split(";")
 #     for each in folders:
@@ -574,30 +575,30 @@ class UnitTest(unittest.TestCase):
 #             caselist.append(item)
 #         for j in range(len(cases)):
 #             steps = get_test_steps(suite_dir, cases[j])
-#             lists.append(steps)
+#             step_lists.append(steps)
 #     item = int(config.item)  # int(os.environ.get('NUMBER', 0))
 #     items = config.items.split(",")  # os.environ.get("CASELIST", "").split(",")
 #     testlist = config.testlist
 #     print('-' * 100)
 #     if item == -1 and items == [""]:
-#         for i in range(len(lists)):
+#         for i in range(len(step_lists)):
 #             test_func = "test_" + caselist[i]
-#             setattr(UnitTest, test_func, UnitTest.get_test_func(lists[i]))
+#             setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[i]))
 #     elif item == -1 and items != [""]:
 #         for each in items:
 #             test_func = "test_" + caselist[int(each)-1]
-#             setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each)-1]))
+#             setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[int(each)-1]))
 #     elif item != -1 and items == [""]:
 #         test_func = "test_" + caselist[item]
-#         setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
+#         setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[item]))
 #     elif item != -1 and items != [""]:
 #         test_func = "test_" + caselist[item]
-#         setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
+#         setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[item]))
 #     elif testlist != "":
 #         val_list = testlist.split(":")
 #         for each in range(val_list[0], val_list[1]):
 #             test_func = "test_" + caselist[int(each)-1]
-#             setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each)-1]))
+#             setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[int(each)-1]))
 #
 #
 # __generate_test_cases()
@@ -607,10 +608,10 @@ loop = int(config.lp)
 
 
 def suite():
-    lists = []  # steps
-    caselist = []
+    step_lists = []  # steps
+    testcase_lists = []  # testcases
     all_suite_dir = []  # testsuite dir
-    all_cases = {}  # {testsuite dir:casename}
+    all_cases = {}  # {testcasename:steps list}
     all_flag = 0
     folders = folder.split(";")
     for i, each in enumerate(folders):
@@ -625,82 +626,151 @@ def suite():
                 all_case = case_list(suite_dir)
                 all_cases.update({suite_dir: all_case})
                 for all_item in all_case:
-                    caselist.append(all_item)
+                    testcase_lists.append(all_item)
             else:
-                caselist.append(item)
+                testcase_lists.append(item)
         if all_flag == 0:
             for j in range(len(cases)):
                 steps = get_test_steps(suite_dir, cases[j])
-                lists.append(steps)
+                step_lists.append(steps)
         else:
             for j in range(len(all_suite_dir)):
                 for k in all_cases.get(all_suite_dir[j]):
                     steps = get_test_steps(all_suite_dir[j], k)
-                    lists.append(steps)
+                    step_lists.append(steps)
 
     item = int(config.item)  # int(os.environ.get('NUMBER', 0))
     items = config.items.split(",")  # os.environ.get("TESTCASES", "").split(",")
-    testlist = config.testlist
     print('-' * 100)
     if item == -1 and items == [""]:  # -N和-TC都未设置值
         if loop > 0:
             print('当前选择所有测试用例执行' + '，并重复%d次' % loop)
-            for i in range(len(lists)):
+            for i in range(len(step_lists)):
                 for l in range(loop):
-                    test_func = "test_" + caselist[i] + '_%d' % (l + 1)
-                    setattr(UnitTest, test_func, UnitTest.get_test_func(lists[i]))
+                    test_func = "test_" + testcase_lists[i] + '_%d' % (l + 1)
+                    setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[i]))
         else:
             print('当前选择所有测试用例执行。')
-            for i in range(len(lists)):
-                test_func = "test_" + caselist[i]
-                setattr(UnitTest, test_func, UnitTest.get_test_func(lists[i]))
+            for i in range(len(step_lists)):
+                test_func = "test_" + testcase_lists[i]
+                setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[i]))
     elif item == -1 and items != [""]:  # -N为空 -TC有值
         if loop > 0:
             print('当前选择用例%s测试用例执行' % items + '，并重复%d次' % loop)
             for l in range(loop):
                 for each in items:
-                    test_func = "test_" + caselist[int(each) - 1] + '_%d' % (l + 1)
-                    setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each) - 1]))
+                    test_func = "test_" + testcase_lists[int(each) - 1] + '_%d' % (l + 1)
+                    setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[int(each) - 1]))
         else:
             print('当前选择用例%s测试用例执行：' % items)
             for each in items:
-                test_func = "test_" + caselist[int(each) - 1]
-                setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each) - 1]))
+                test_func = "test_" + testcase_lists[int(each) - 1]
+                setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[int(each) - 1]))
     elif item != -1 and items == [""]:  # -N有值 -TC为空
         if loop > 0:
             print('当前选择第%d个用例执行测试' % (item + 1) + '，并重复%d次' % loop)
             for l in range(loop):
-                test_func = "test_" + caselist[item] + '_%d' % (l + 1)
-                setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
+                test_func = "test_" + testcase_lists[item] + '_%d' % (l + 1)
+                setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[item]))
         else:
             print('当前选择第%d个用例执行测试。' % (item + 1))
-            test_func = "test_" + caselist[item]
-            setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
-    elif item != -1 and items != [""]: # -N -TC都有值
+            test_func = "test_" + testcase_lists[item]
+            setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[item]))
+    elif item != -1 and items != [""]:  # -N -TC都有值
         if loop > 0:
             print('当前选择第%d个用例执行测试' % (item + 1) + '，并重复%d次' % loop)
             for l in range(loop):
-                test_func = "test_" + caselist[item] + '_%d' % (l + 1)
-                setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
+                test_func = "test_" + testcase_lists[item] + '_%d' % (l + 1)
+                setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[item]))
         else:
             print('当前选择第%d个用例执行测试。' % (item + 1))
-            test_func = "test_" + caselist[item]
-            setattr(UnitTest, test_func, UnitTest.get_test_func(lists[item]))
-    elif testlist != "":  #TODO
-        if loop > 0:
-            print('当前选择第%s用例执行测试。' % (testlist) + '，并重复%d次' % loop)
-            for l in range(loop):
-                val_list = testlist.split(":")
-                for each in range(val_list[0], val_list[1]):
-                    test_func = "test_" + caselist[int(each) - 1]
-                    setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each) - 1]))
-        else:
-            print('当前选择第%s用例执行测试。' % (testlist))
-            val_list = testlist.split(":")
-            for each in range(val_list[0], val_list[1]):
-                test_func = "test_" + caselist[int(each) - 1]
-                setattr(UnitTest, test_func, UnitTest.get_test_func(lists[int(each) - 1]))
+            test_func = "test_" + testcase_lists[item]
+            setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[item]))
+
     print('-' * 100)
     suit = unittest.TestSuite()
     suit.addTest(unittest.makeSuite(UnitTest))
     return suit
+
+
+def suite_file():
+    step_lists = []  # steps
+    testcase_lists = []  # testcases name
+    folders = deal_testcase_dir(get_file_runlist())  # 获取运行testsuite目录
+
+    print('-' * 100)
+    # 加载测试用例名和测试步骤
+    for i, each in enumerate(folders):
+        suite_dir = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")), each)
+        print(suite_dir)
+        cases = case_list(suite_dir)
+        testcase_lists.extend(cases)
+        for j in range(len(cases)):
+            steps = get_test_steps(suite_dir, cases[j])
+            step_lists.append(steps)
+
+    # 添加testcase成员函数
+    if loop > 0:
+        print('当前选择runlist所有测试用例执行' + '，并重复%d次' % loop)
+        for i in range(len(step_lists)):
+            for l in range(loop):
+                test_func = "test_" + testcase_lists[i] + '_%d' % (l + 1)
+                setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[i]))
+    else:
+        print('当前选择runlist所有测试用例执行。')
+        for i in range(len(step_lists)):
+            test_func = "test_" + testcase_lists[i]
+            setattr(UnitTest, test_func, UnitTest.get_test_func(step_lists[i]))
+
+    print('-' * 100)
+    suit = unittest.TestSuite()
+    suit.addTest(unittest.makeSuite(UnitTest))
+    return suit
+
+
+def get_file_runlist(filename="runlist.txt"):
+    """
+    读取runlist.txt里面内容。
+    :param filename: 读取的文件名，框架默认读取runlist.txt。
+    :return: 返回读取到用例目录列表（list）
+    """
+    root = os.path.curdir
+    testcases_dir = []
+    for root, dirs, files in os.walk(root):
+        for each in files:
+            if each == filename:
+                path = os.path.join(root, each)
+                fd = codecs.open(path, 'r')
+                testcases_dir.extend(fd.read().splitlines())
+                fd.close()
+                return testcases_dir
+
+    print("error:can't find the %s" % filename)
+
+
+def deal_testcase_dir(cases_dir):
+    """
+    处理用例目录：
+    1、必须以TestCase开头,其他开头的会被过滤
+    2、只支持3层或4层目录，即3层：TestCase//项目名//平台或模块 4层：TestCase//项目名//平台或模块//模块
+    :param cases_dir: 用例目录列表(list)。
+    :return: 返回处理好的用例目录列表（list）
+    """
+    deal_cases_dir = []
+    if cases_dir is None:
+        return False
+    for each in cases_dir:
+        if each.startswith('TestCase'):
+            dir_names = each.split('//')
+            if len(dir_names) == 4:
+                deal_cases_dir.append(each)
+            elif len(dir_names) == 3:
+                cases = case_list(each)
+                for case in cases:
+                    s = os.path.join(each, case)
+                    deal_cases_dir.append(s)
+            else:
+                print("not support this dir: %s" % each)
+        else:
+            print("This dir is not startwith 'TestCase' : %s" % each)
+    return deal_cases_dir

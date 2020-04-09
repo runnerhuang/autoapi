@@ -12,8 +12,15 @@ class TestReport(object):
         folder = folder.replace("\\", "_")
     else:
         pass
+
     if ";" in folder:
         folder = folder.split(";")[0].replace(folder.split(";")[0].split("_")[-1], "Multiple_Folder")
+
+    if config.runlist > 0:
+        project = config.ReadConfig.get_project("project").upper()
+        version = config.ReadConfig.get_project("version")
+        env = config.env
+        folder = "TestCase_" + project + "_" + version + "_" + env + "_RUNLIST"
 
     def __init__(self):
         pass
@@ -21,7 +28,6 @@ class TestReport(object):
     @classmethod
     def generate_report(cls, root_dir=None):
         cls.report_conf = cls.make_root_dir(root_dir)
-        # print(cls.report_conf)
         report_file = cls.get_report_file(cls.folder + "_" + cls.get_report_timestamp())
         report_file_full_name = os.path.join(cls.report_conf, report_file)
         return report_file_full_name
@@ -37,7 +43,8 @@ class TestReport(object):
         cls.report_conf = dict(root_run=os.path.dirname(os.path.abspath(__file__)))
 
         if not root_dir:
-            root_dir = os.path.realpath(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'Report'))
+            root_dir = os.path.realpath(
+                os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'Report'))
 
         report_dir = os.path.realpath(os.path.join(root_dir, cls.folder))
 
@@ -73,5 +80,3 @@ class TestReport(object):
                 if each == "log.txt":
                     path = os.path.join(cls.root, each)
                     return path
-
-

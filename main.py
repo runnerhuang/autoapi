@@ -7,7 +7,7 @@ ap = ArgumentParser(
 
 ap.add_argument('-F', dest='project_case_folder', action='store', type=str, nargs='?',
                 default='TestCase//BAIDU//LOGIN//LOGIN')
-ap.add_argument('-N', dest='number', action="store", type=int, nargs='?', default='1')  # 单例，0-all
+ap.add_argument('-N', dest='number', action="store", type=int, nargs='?', default='0')  # 单例，0-all
 ap.add_argument('-S', dest='sleep_time', action="store", type=float, nargs='?', default=0)
 ap.add_argument('-TC', dest='testcases', action="store", type=str, nargs='?', default="")  # 多例,默认空
 ap.add_argument('-TD', dest="teardown", action="store", type=int, nargs='?', default=1)  # 是否运行teardown,默认1不执行
@@ -17,7 +17,7 @@ ap.add_argument('-DR', dest="dataready", action="store", type=int, nargs='?', de
 ap.add_argument('-RR', dest="rerun", action="store", type=int, nargs='?', default=0)  # 是否重跑并重跑几次
 ap.add_argument('-LP', dest="loop", action="store", type=int, nargs='?', default=0)  # 循环执行次数
 ap.add_argument('-MD', dest='method', action="store", type=str, nargs='?', default="DEBUG")
-ap.add_argument('-L', dest="list", action="store", type=str, nargs='?', default="1")  # TODO
+ap.add_argument('-RL', dest="runlist", action="store", type=int, nargs='?', default=1)  # 0不运行，1运行runlist.txt TODO
 # ap.add_argument('-DB', dest='database', action="store", type=str, nargs='?', default="waiwang")  # TODO
 
 args = ap.parse_args()
@@ -33,7 +33,7 @@ os.environ.setdefault('DATAREADY', str(args.dataready))
 os.environ.setdefault('RERUN', str(args.rerun))
 os.environ.setdefault('LOOP', str(args.loop))
 os.environ.setdefault('METHOD', args.method)
-os.environ.setdefault('TESTLIST', args.list)
+os.environ.setdefault('RUNLIST', str(args.runlist))
 # os.environ.setdefault('DATABASE', args.database)
 
 try:

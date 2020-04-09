@@ -17,7 +17,7 @@ dataready = os.environ.get('DATAREADY', 0)
 rr = os.environ.get("RERUN", 0)
 lp = os.environ.get("LOOP", 0)
 method = os.environ.get('METHOD', "DEBUG")
-testlist = os.environ.get("TESTLIST", "")
+runlist = int(os.environ.get("RUNLIST", 0))
 
 time = []  # 每个用例执行的时间
 reruns = []  # 每个用例重复执行的次数

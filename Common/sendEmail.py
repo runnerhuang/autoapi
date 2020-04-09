@@ -19,6 +19,7 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
     project = config.ReadConfig.get_project("project").upper()
     version = config.ReadConfig.get_project("version")
     env = config.env
+    runlist = config.runlist
 
     if "/" in folder:
         folder = folder.replace("/", "_")
@@ -26,9 +27,13 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
         folder = folder.replace("\\", "_")
     else:
         pass
-    # print(folder)
+
     if ";" in folder:
         folder = folder.split(";")[0].replace(folder.split(";")[0].split("_")[-1], "Multiple_Folder")
+
+    if runlist > 0:
+        folder = "TestCase_" + project + "_" + version + "_" + env + "_RUNLIST"
+
     time_str = time.strftime("%Y-%m-%d %X", time.localtime())
     # Set the server and the message details
     send_from = '%s' % config.ReadConfig.get_email("email_sender")
@@ -116,7 +121,7 @@ def send_email(file_to_send=None, text=None, mail_to=None, attachment=True):
     html = MIMEText(html, 'html', _charset='utf-8')
     msg.attach(html)
     if attachment:
-        if isinstance(file_to_send,list):
+        if isinstance(file_to_send, list):
             for SendFile in file_to_send:
                 fp = open("%s" % SendFile, "rb")
                 part = MIMEApplication(fp.read())
